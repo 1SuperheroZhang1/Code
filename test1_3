@@ -1,0 +1,225 @@
+# Superhero Zhang
+#数据类型转换
+#为什么需要数据类型转换？ 将不同的数据类型拼接起来
+#数据类型转换的函数
+#函数名                            作用                               注意事项                         举例
+#str()                 将其他数据类型转换为字符串                      也可用引号转换                      str(123)/'123'
+#int()                 将其他数据类型转换为整型               1.文字类和小数类字符串，无法转换成整数           int('123')
+#                                                        2.浮点数转化成整数：抹零取整                   int(9.8)
+#float()               将其他书籍类型转换为浮点数             1.文字类无法转换成整数                        float(9.0)
+#                                                        2.整数转换为浮点数，末尾为.0                   float(9)
+name='张三'
+age=20
+print(type(name),type(age))#说明name和age的数据类型不同
+#print('我叫'+name+'今年,'+age+'岁了')#当将str类型与int类型进行连接时，报错。解决方案：类型转换
+print('我叫'+name+'今年,'+str(age)+'岁了')   #将int类型通过str()函数转换成str类型
+
+print('-----------str()将其他数据类型转换成str类型---------------')
+a=10
+b=98.8
+c=True
+print(type(a),type(b),type(c))
+print(str(a),str(b),str(c),type(str(a)),type(str(b)),type(str(c)))
+
+print('-----------int()将其他数据类型转换成int类型---------------')
+s1='128'
+f1=98.7
+s2='76.77'
+ff=True
+s3='hello'
+print(type(s1),type(f1),type(s2),type(ff),type(s3))
+print(int(s1),type(int(s1)))  #将str类型转换成int类型。字符串为数字串
+print(int(f1),type(int(f1)))  #将float类型转换成int类型，截取整数部分舍掉小数部分
+#print(int(s2),type(int(s2))) #将str类型转换成int类型，报错，因为字符串为小数串
+print(int(ff),type(int(ff)))
+#print(int(s3),type(int(s3)))  #将str类型转换成int类型时，字符串必须为数字串(整数)，非数字串不允许转换
+
+print('-----------float()将其他数据类型转换成float类型---------------')
+s1='128.98'
+s2='76'
+ff=True
+s3='hello'
+i=98
+print(type(s1),type(s2),type(ff),type(s3),type(i))
+print(float(s1),type(float(s1)))
+print(float(s2),type(float(s2)))
+print(float(ff),type(float(ff)))
+#print(float(s3),type(float(s3))) #字符串中的数据如果是非数字串，则不允许转换
+print(float(i),type(float(i)))
+
+#Python中的注释
+#注释
+#在代码中对代码的功能进行解释说明的标注性文字，可以提高代码的可读性
+#注释的内容会被Python解释器忽略
+#通常包括三种类型的注释
+                    #单行注释  ->以'#'开头，直到换行结束              #
+                    #多行注释  ->并没有单独的多行注释标记，将一对三引号之间的代码称为多行注释  ''' """
+                    #中文编码声明注释  ->在文件开头加上中文声明注释，用以指定源码文件的编码格式。 #coding:utf-8
+                    #coding:gbk
+
+#Python的输入函数input()
+#input()函数的介绍：
+                #作用：接受来自用户的输入
+                #返回值类型：输入值的类型是str
+                #值的存储：使用=对输入的值进行存储
+                #present=input('')
+#输入函数input
+#present=input('大圣想要什么礼物呢？')
+#print(present,type(present))
+
+#从键盘输入两个整数，计算两个整数的和
+#a=input("请输入一个加数")
+#b=input('请输入另一个加数')
+#print(int(a)+int(b))
+
+#Python中的运算符
+#Python中的常用运算符：
+                    #算术运算符
+                            #标准算术运算符 ->加(+)、减(-)、乘(*)、除(/)、整除(//)
+                            #取余运算符    ->%
+                            #幂运算符      ->**
+                    #赋值运算符
+                            #执行顺序：右->左
+                            #支持链式赋值  ->1=b=c=20
+                            #支持参数传递  ->+=,-=,*=,/=,//=,%=
+                            #支持系列解包赋值  ->a,b,c=20,30,40
+                    #比较运算符
+                            #对变量或表达式的结果进行大小、真假比较
+                            #比较运算符：
+                                #>,<,>=,<=,!=
+                                #==   ->对象value的比较
+                                #is is not ->对象id的比较
+                    #布尔运算符
+                            #对于布尔值之间的运算
+                                #and
+                                #or
+                                #not
+                                #in
+                                #not in
+                    #位运算符
+                            #将数据转换成二进制进行计算
+                            #位与&        ->对应数位都是1，结果数位才是1，否则为0
+                            #位或|        ->对应数位都是0，结果数位才是0，否则为1
+                            #左移位操作符   ->高位溢出舍弃，低位补零
+                            #右移位操作符   ->低位溢出舍弃，高位补0
+
+#算术运算符
+print(1+1) #加法运算
+print(1-1) #减法运算
+print(2*4) #乘法运算
+print(1/2) #除法运算
+print(11//2) #整除运算
+print(11%2) #取模运算
+print(2**2) #幂运算--表示2的2次方
+
+print(9//4) #2
+print(-9/-4)  #2
+
+print(-9//4) #-3
+print(9//-4) #-3   一正一负的整除公式，向下取整
+
+print(-9%4) #公式 余数=被除数-除数*商      （-9）-（4*-3）=3
+print(9%-4) #                           （9）-（-4*-3）=-3
+
+#赋值运算符
+#运算顺序 右->左
+i=3+4
+print(i)
+a=b=c=20
+print(a,id(a)) #链式赋值
+print(b,id(b))
+print(c,id(c))
+
+print('----------支持参数赋值------------')
+a=20;
+a+=30 #相当于a=a+30
+print(a)
+a-=10 #相当于a=a-10
+print(a)
+a*=2  #相当于a=a*2
+print(a)
+a/=3  #相当于a=a/3
+print(a,type(a))
+a//=2 #相当于a=a//2
+print(a)
+a%=2  #相当于a%=2
+print(a)
+
+print('--------------解包赋值----------------')
+a,b,c=20,30,40
+print(a,b,c)
+
+print('-------------交换两个变量的值-------------')
+a,b=10,20
+print('交换之前：',a,b)
+a,b=b,a
+print('交换之后：',a,b)
+
+#比较运算符  比较运算符的结果为bool类型
+a,b=10,20
+print("a>b吗？",a>b) #False
+print("a<b吗？",a<b) #True
+print("a=b吗？",a==b) #False
+print("a>=b吗？",a>=b) #False
+print("a<=b吗？",a<=b) #True
+print("a!=b吗？",a!=b) #True
+
+'''一个 = 称为赋值运算符，两个 == 称为比较运算符
+一个变量由三部分组成：标识 类型 值
+== 比较的是值还是标识呢？   比较的是值
+比较对象的表示使用 is
+'''
+a=10
+b=10
+print(a==b) #True
+print(a is b) #True
+
+lst1=[11,22,33,44]
+lst2=[11,22,33,44]
+print(lst1==lst2)   #value   ->True
+print(lst1 is lst2) #id      ->False
+print(id(lst1))
+print(id(lst2))
+print(a is not b)
+print(lst1 is not lst2)
+
+#布尔运算
+a,b=1,2
+print('------------------and 并且----------------')
+print(a==1 and b==2)# True  True and True->True
+print(a==1 and b<2)#False  True and False->False
+print(a!=1 and b==2)#False False and True->False
+print(a!=1 and b!=2)#False False and False->False
+print('-------------------or 或者-----------------')
+print(a==1 or b==2)# True  True or True->True
+print(a==1 or b<2)#True  True or False->True
+print(a!=1 or b==2)#True False or True->True
+print(a!=1 or b!=2)#False False and False->False
+print('-----------------not 对运算数取反---------------')
+f=True
+f1=False
+print(not f)
+print(not f1)
+print('-------------------in与not in-------------------')
+s='hello world'
+print('w' in s)
+print('k' in s)
+print('k' not in s)
+print('w' not in s)
+
+print(4&8) #按位与->同为1时结果为1
+print(4|8)#按位或->同为0时结果为0
+print(4<<1) #向左移动1位(移动一个位置),相当于乘以2
+print(4<<2) #向左移动2位(移动两个位置),相当于乘以4
+print(4>>1) #向右移动1位(移动一个位置),相当于除以2
+print(4>>2) #向右移动2位(移动两个位置),相当于除以4
+
+#Python中的运算符
+#运算符的优先级：
+            #()
+            #算术运算符:**->*,/,//,%->+-
+            #位运算符:<<,>>,&,|
+            #比较运算符:>,<,>=,<=,==,!=
+            #布尔运算:and or not
+            #赋值运算符:=
+
