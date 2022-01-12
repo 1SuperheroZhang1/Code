@@ -1,0 +1,129 @@
+# Superhero Zhang
+#模块
+    #什么叫模块？
+        #模块英文为Modules
+        #函数与模块的关系-------------------->一个模块可以包含N多个函数
+        #在python中一个扩展名为.py的文件就是一个模块
+        #使用模块的好处
+            #方便其他程序和脚本的导入并使用
+            #避免函数名和变量名冲突
+            #提高代码的可维护性
+            #提高代码的可重复性
+    #自定义模块
+        #创建模块
+            #新建一个.py文件，名称尽量不要与python自带的标准模块名称相同
+        #导入模块
+            #import 模块名称 [as 别名]
+            #from 模块名称 import 函数/变量/类
+    #以主程序形式运行
+        #在每个模块的定义中都包括一个记录模块名称的变量_name_,程序可以检查该变量，以确定他们在哪个模块中执行。
+        #如果一个模块不是被导入到其他程序中执行，那么它可能在解释器的顶级模块执行。
+        #顶级模块的__name__变量的值为__main__
+        #if __name__ = '__ main __':
+        #   pass
+    #python中常用的内置模块
+        #模块名                                描述
+        #sys                与python解释器及其环境操作有关的标准库
+        #time               提供与时间相关的各种函数的标准库
+        #os                 提供了访问操作系统服务功能的标准库
+        #calendar           提供与日期相关的各种函数的标准库
+        #urllib             用于读取来自网上(服务器)的数据标准库
+        #json               用于使用JSON序列化和反序列化对象
+        #re                 用于在字符串中执行正则表达式匹配和替换
+        #math               提供标准算术运算函数的标准库
+        #decimal            用于进行精确控制运算精度，有效数位和四舍五入操作的十进制运算
+        #logging            提供了灵活的记录事件、错误、警告和调试信息等日志信息的功能
+#python中的包
+    #python中的包
+        #包是一个分层次的目录结构，它将一组功能相近的模块组织在一个目录
+        #作用：
+            #代码规范
+            #避免与模块名称冲突
+        #包和目录的区别：
+            #包含__init__.py文件的目录称为包
+            #目录里通常不包含__init__.py文件
+        #包的导入
+            #import 包名.模块名
+        #导入带有包的模块时的注意事项
+            #使用import方式进行导入时，只能跟包名或模块名
+                #import 包名
+                #import 模块名
+            #使用from ... import方式导入时，可以导入包，模块，变量
+                #from 包名 import 模块名
+                #from 包名.模块名 import 变量名
+#第三方模块的安装和使用
+    #第三方模块的安装
+        #pip install 模块名
+    #第三方模块的使用
+        #import 模块名
+'''模块'''
+def fun1():
+    pass
+def fun2():
+    pass
+
+class Student:
+    native_place='jilin'
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    @classmethod
+    def cm(cls):
+        pass
+    @staticmethod
+    def sm():
+        pass
+
+a=10
+b=20
+print(a+b)
+#导入模块
+import math #关于数学运算的模块
+print(id(math))
+print(type(math))
+print(math)
+print(math.pi)
+print('-----------------------------------')
+print(dir(math))
+print(math.pow(2,3),type(math.pow(2,3)))    #pow()函数是幂函数
+print(math.ceil(9.001))     #ceil天花板
+print(math.floor(9.999))    #floor地板
+
+from math import pi
+print(pi)
+print(pow(2,3),type(pow(2,3)))
+print(math.pow(2,3),type(math.pow(2,3)))
+
+'''以主程序方式运行'''
+import Calc
+print(Calc.add(100,200))
+'''python中常用的内置模块'''
+#sys
+import sys
+print(sys.getsizeof(24))
+print(sys.getsizeof(48))
+print(sys.getsizeof(True))
+print(sys.getsizeof(False))
+#time
+import time
+print(time.time())
+print(time.localtime(time.time()))
+#urllib
+import urllib.request
+print(urllib.request.urlopen('http://www.baidu.com').read())
+#math
+import math
+print(math.pow(2,3))
+print(math.pi)
+
+'''第三方模块的安装和使用'''
+import schedule
+import time
+
+def job():
+    print('哈哈----------------')
+
+schedule.every(3).seconds.do(job)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
