@@ -1,0 +1,235 @@
+# Superhero Zhang
+def w1():
+    print('正在装饰')
+
+    def inner():
+        print('正在验证权限')
+
+    return inner()
+
+
+w1()
+
+a='123'
+b='123'
+print(a!=b)
+print(a is b)
+print(a==123)
+c=a+b
+print(c)
+#a,b为字符串不可变类型，所以指向相同地址，所以  a is b is指地址相同 ==内容相同
+
+lists = [1, 2, 3, 4, 5, 6]
+print(lists[6:])
+#对于列表的切片操作   列表切片lists[start:end]，当start为自然数且超出索引时，默认返回空列表[ ]
+
+dicts = {'one': 1, 'two': 2, 'three': 3}
+tmp = dicts.copy()
+tmp['one'] = 'abc'
+print(dicts)
+print(tmp)
+#字典数据类型的copy函数，当简单的值替换的时候，原始字典和复制过来的字典之间互不影响，
+#但是当添加，删除等修改操作的时候，两者之间会相互影响。
+#所以新字典的值的替换对原字典没有影响
+
+lis=[1,3,2]
+a=id(lis)
+lis=sorted(lis) #sorted()方法返回一个新的列表，id指向内存空间，不一致
+b=id(lis)
+print(a==b)
+
+lis=[1,3,2]
+a=id(lis)
+lis +=[4,5]
+b=id(lis)
+print(a==b)
+
+tup=(1,3,2)
+a=id(tup)
+tup +=(4,5)
+b=id(tup)
+print(a==b)
+
+tup=(1,3,2)
+a=id(tup)
+tup=sorted(tup)
+b=id(tup)
+print(a==b)
+
+strs = 'abcd'
+print(strs.center(10, '*'))
+
+s1='123'
+s2='123'
+print(s1 is s2)
+
+a1=123
+a2=123
+print(id(a1))
+print(id(a2))
+print(id(a1) == id(a2))
+
+t1=(1,2,3)
+t2=t1[:]
+print(t1)
+print(t2)
+print(id(t1))
+print(id(t2))
+print(t1 is t2)
+
+lst=[1,2,3]
+lst1=lst[:]
+print(lst)
+print(lst1)
+print(id(lst))
+print(id(lst1))
+print(id(lst)==id(lst1))
+
+tmp = 'ab' + 'c'*2
+print(tmp)
+
+for i in range(10, 1, -2):
+    print(i)
+
+#dividend = 1
+
+#divide = int(input())
+
+#try:
+#    result = dividend / divide
+#    print(1,end=" ")
+#except ZeroDivisionError:
+
+#    print(2,end=" ")
+#except Exception:
+#    print(3,end=" ")
+#else:
+#    print(4)
+
+#tup = (1,2,[3,4])
+
+#tup[2]+=[5,6]
+
+lists = [1, 2, 3]
+lists.insert(2, [7,8,9])
+print(lists)
+
+lists = [1, 1, 2, 3, 4, 5, 6]
+lists.remove(1)
+lists.append(7)
+print(lists)
+
+def fn():
+
+    t = []
+
+    i = 0
+
+    while i < 2:
+
+        t.append(lambda x: print(i*x,end=","))
+
+        i += 1
+
+    return t
+
+for f in fn():
+
+    f(2)
+
+
+foo = [1, 2]
+foo1 = foo
+foo.append(3)
+print(foo)
+print(foo.append(3))
+
+dict1 = {'one': 1, 'two': 2, 'three': 3}
+dict2 = {'one': 4, 'tmp': 5}
+dict1.update(dict2)
+print(dict1)
+
+'''one = (1, 2, 3)
+one[2] = 4
+print(one[2])'''
+
+a = [['1','2'] for i in range(2)]
+
+b = [['1','2']]*2
+
+a[0][1] = '3'
+
+b[0][0] = '4'
+
+print(a,b)
+
+list = ['1', '2', '3', '4', '5']
+print (list[10:])
+
+
+def func(s, i, j):
+    if i < j:
+        func(s, i + 1, j - 1)
+        s[i], s[j] = s[j], s[i]
+
+
+def main():
+    a = [10, 6, 23, -90, 0, 3]
+    func(a, 0, len(a) - 1)
+    for i in range(6):
+        print(a[i])
+        print("\n")
+
+
+main()
+
+#tup=(1,(2,3))
+#a,b,c=tup
+#print(a,b,c)
+
+res = []
+for i in 'python':
+    if i == 'h':
+        continue
+    res.append(i)
+print(''.join(res))
+
+strs = 'abbacabb'
+print(strs.strip('ab'))
+
+print (type(1/2))
+
+tmp = dict.fromkeys(['a', 'b'], 4)
+print(tmp)
+
+strs = 'I like python and java'
+print(strs.replace('I', 'Your'))
+print(strs.replace('a', '*', 2))
+
+a=[1,{'age':10}]
+b=a.copy()
+a[1]['age']=12
+print(b)
+
+import copy
+a=[1,{'age':10}]
+b=a.deepcopy()
+a[1]['age']=12
+print(b)
+
+a=[1,{'age':10}]
+b=a[:]
+a[1]['age']=12
+print(b)
+
+a=[1,{'age':10}]
+b=a
+a[1]['age']=12
+print(b)
+
+lists = [1, 2, 2, 3, 4, 5]
+print(lists.index(2))
+
+tmp = [1, 2, 3, 4, 5, 6]
+tmp.insert(-3, 'a')
+print(tmp[4])
