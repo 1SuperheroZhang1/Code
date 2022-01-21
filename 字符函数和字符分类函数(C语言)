@@ -1,0 +1,174 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+//strstr()函数 - 查找字符串子串
+//char* strstr(const char* string,const char* strCharSet);
+//NULL - 空指针
+//NUL/Null - '\0'
+//KMP算法
+//#include<string.h>
+//#include<assert.h>
+//char* my_strstr(const char* p1, const char* p2)
+//{
+//	assert(p1 != NULL);
+//	assert(p2!=NULL);
+//	char* s1 =(char*) p1;
+//	char* s2 = (char*)p2;
+//	char* cur = (char*)p1;
+//	if (p2 == '\0')
+//	{
+//		return (char*)p1;
+//	}
+//	while (*cur)
+//	{
+//		s1 = cur;
+//		s2 = (char*)p2;
+//		while ((*s1 != '\0') && (*s2 != '\0') && (*s1 == *s2))
+//		{
+//			s1++;
+//			s2++;
+//		}
+//		if (*s2 == '\0')
+//		{
+//			return cur;//找到子串
+//		}
+//		if (*s1 == '\0')
+//		{
+//			return NULL;
+//		}
+//		cur++;
+//	}
+//	return NULL;//找不到子串
+//}
+//int main()
+//{
+//	//char* p1 = "abcdefghi";
+//	char* p1 = "abbbcdef";
+//	//char* p1 = "abcdef";
+//	//char* p1 = "abcdefabcdef";//如果需要查找的字符子串在原字符串中出现多次，返回第一次出现的地址
+//	//char* p2 = "def";
+//	char* p2 = "bbc";
+//	//char* p2 = "defq";
+//	//char * ret=strstr(p1,p2);
+//	char* ret = my_strstr(p1, p2);
+//	if (ret == NULL)
+//	{
+//		printf("子串不存在\n");
+//	}
+//	else
+//	{
+//		printf("%s\n",ret);
+//	}
+//
+//	return 0;
+//}
+//strtok()函数 - 字符串切割函数
+/*char* strtok(char* str, const char* sep);
+  sep参数是一个字符串，定义了用作分隔符的字符集合
+  第一个参数指定一个字符串，它包含了0个或者多个由sep字符串中一个或者多个分隔符分割的标记
+  strtok函数找到str中的下一个标记，并将其用'\0'结尾，返回一个指向这个标记的指针
+  注：strtok函数会改变被操作的字符串，所以在使用strtok函数切分的字符串一般都是临时拷贝的内容并且可修改
+  strtok函数的第一个参数不为NULL，函数将找到str中的第一个标记，strtok函数将保存它在字符串中的位置
+  strtok函数的第一个参数为NULL,函数将在同一个字符串中被保存的位置开始，查找下一次标记。
+  如果字符串中不存在更多的标记，则返回NULL指针
+*/
+
+//int main()
+//{
+//	//127.0.0.1     .
+//	//127 0 0 1    strtok
+//	//IP地址 - 点分十进制的表示方式
+//	char arr[] = "127.0.0.1";
+//	char* p = ".";
+//	//zj@yau.edu.com  @.
+//	//zj yau edu com
+//	//char arr[] = "zj@yau.edu.com";
+//	//char* p = "@.";
+//
+//	char* ret = NULL;
+//	for (ret = strtok(arr, p); ret != NULL; ret = strtok(NULL, p))
+//	{
+//		printf("%s ",ret);
+//	}
+//	return 0;
+//}
+//strerror()函数 - 错误信息函数
+/*  char* strerror(int errnum);
+    返回错误码所对应的错误信息。
+*/
+//#include<errno.h>
+//int main()
+//{
+//    //错误码 -         错误信息
+//    //0      -         No error
+//    //1      -         Operation not permitted
+//    //2      -         No such file or directory
+//    //...
+//    //char* str = strerror(0);  //0 - No error
+//    //char* str = strerror(1);  //1 - Operation not permitted
+//    //char* str = strerror(2);    //2 - No such file or directory
+//    /*errno是一个全局的错误码的变量
+//      当C语言的库函数在执行过程中，发生了错误，就会把对应的错误码，赋值到errno中。
+//    */
+//
+//    /*char* str = strerror(errno);
+//    printf("%s\n",str);*/
+//
+//    //打开文件
+//    FILE * pf=fopen("test.txt", "r");
+//    char* str = strerror(errno);
+//    if (pf == NULL)
+//    {
+//        printf("%s\n",str);
+//    }
+//    else
+//    {
+//        printf("open file success\n");
+//    }
+//
+//    return 0;
+//}
+//
+#include<ctype.h>
+//字符分类函数
+// 函数                         如果他的参数符合下列条件就返回真
+// iscntrl                              任何控制字符
+// isspace                      空白字符：空格' ',换页'\f',换行'\n'，回车'\r',水平制表符'\t',垂直制表符'\v'
+// isdigit                            十进制数字 0-9 
+// isxdigit                       十六进制数字，包括所有十进制数字，小写字母 a-f,大写字母 A-F
+// islower                              小写字母 a-z
+// isupper                              大写字母 A-Z
+// isalpha                              字母 a-z或A-Z
+// isalnum                              字母或者数字，a-z,A-Z,0-9
+// ispunct                              标点符号，任何不属于数字或者字母的图形字符(可打印)
+// isgraph                               任何图形字符
+// isprint                           任何可打印字符，包括图形字符和空白字符
+// 字符转换函数
+// int tolower(int c);
+// int toupper(int c);
+//int main()
+//{
+//    //char ch = 'w';
+//    //int ret = islower(ch);
+//    //char ch = '@';
+//    //int ret = islower(ch);
+//    /*int a = 2;
+//    int ret = isdigit(a);
+//    printf("%d\n",ret);*/
+//    //char ch = tolower('Q');
+//    //char ch = toupper('q');
+//    //putchar(ch);
+//    
+//    char arr[] = "I Am A Student";
+//    int i = 0;
+//    while (arr[i])
+//    {
+//        if (isupper(arr[i]))
+//        {
+//            arr[i] = tolower(arr[i]);
+//        }
+//        i++;
+//    }
+//    printf("%s\n",arr);
+//    return 0;
+//}
