@@ -1,0 +1,216 @@
+/*
+ 内置类型：C语言自己的类型
+ char/short/int/long/float/double
+ 复杂对象
+ 复杂类型 - 自定义类型：结构体、枚举、联合体
+*/
+
+//结构体
+//结构：一些值的集合，这些值称为成员变量。结构的每个成员可以是不同类型的变量
+/*
+   结构体的声明
+   struct tag
+   {
+		member-list;//成员列表
+   }variable-list;//变量列表
+*/
+//struct Stu {
+//	char name[20];//名字
+//	char tele[12];//电话
+//	char sex[6];  //性别
+//	int age;      //年龄
+//}s4,s5,s6;
+//
+//struct Stu s3;//全局变量
+//int main()
+//{
+//	//创建结构体变量
+//	struct Stu s1;
+//	struct Stu s2;
+//
+//	return 0;
+//}
+//s1,s2为局部变量   s3,s4,s5,s6为全局变量
+
+//特殊的声明 - 匿名结构体类型 - 结构在声明是省略了结构体标签
+//struct {
+//	char name[20];
+//	int age;
+//}x;
+//
+//int main()
+//{
+//
+//	return 0;
+//}
+
+//结构的自引用
+//struct Node {
+//	int data;//数据域
+//	struct Node* p;//指针域
+//};
+
+//typedef struct Node {
+//	char name[20];
+//	int age;
+//}Node;
+//
+//int main()
+//{
+//	struct Node n1;
+//	Node n2;
+//	return 0;
+//}
+
+//结构体变量的定义和初始化
+//#include<stdio.h>
+//struct point {
+//	int x;
+//	int y;
+//}s;//声明结构体的同时，定义结构体变量
+//
+//int main()
+//{
+//	struct point s1;//先声明，再定义结构体变量
+//	struct point s2 = {3,4};//定义结构体变量的同时，对变量进行赋值
+//	printf("%d %d",s2.x,s2.y);
+//	return 0;
+//}
+
+//结构体内存对齐 - 计算结构体的大小
+//结构体的内存对齐是拿空间换取时间的说法。
+/*
+  结构体的内存对齐规则：
+	 1.第一个成员在与结构体变量偏移量为0的地址处。
+	 2.其他成员变量要对齐到某个数字(对齐数)的整数倍的地址处。
+	 对齐数 = 编译器默认的一个对齐数与该成员大小 的 较小值
+	 VS中默认的值为8
+	 3.结构体总大小为最大对齐数(每个成员变量都有一个对齐数)的整数倍。
+	 4.如果嵌套了结构体的情况，
+	 嵌套的结构体对齐到自己的最大对齐数的整数倍处，
+	 结构体的整体大小就是所有最大对齐数(含嵌套结构体的对齐数)的整数倍。
+*/
+//#include<stdio.h>
+//struct S1 {
+//	char c1;
+//	int a;
+//	char c2;
+//};
+//struct S2 {
+//	char c1;
+//	char c2;
+//	int a;
+//};
+
+//int main()
+//{
+//	struct S1 s1 = {0};
+//	printf("%d\n",sizeof(s1));
+//	struct S2 s2 = {0};
+//	printf("%d\n",sizeof(s2));
+//	return 0;
+//}
+
+//#include<stdio.h>
+//struct S3 {
+//	double d;
+//	char c;
+//	int i;
+//};
+////
+////int main()
+////{
+////	printf("%d\n",sizeof(struct S3));//16
+////	return 0;
+////}
+//
+//#include<stdio.h>
+//struct S4 {
+//	char c1;
+//	struct S3 s3;
+//	double d;
+//};
+//
+//int main()
+//{
+//	printf("%d\n",sizeof(struct S4));//32
+//	return 0;
+//}
+
+//修改默认对齐方式
+//#pragma 预处理指令,可以改变默认对齐数
+//#include<stdio.h>
+//#pragma pack(4) //设置默认对齐数4
+//struct S {
+//	char c;
+//	double d;
+//};
+//#pragma pack() //取消设置的默认对齐数
+//#pragma pack(1) //设置默认对齐数4
+//struct S {
+//	char c;
+//	double d;
+//};
+//#pragma pack() //取消设置的默认对齐数
+//int main()
+//{
+//	struct S s1;
+//	printf("%d\n",sizeof(s1));
+//	return 0;
+//}
+
+//offsetof()
+/*
+  size_t offsetof(structName,memberName) - 求出偏移量
+*/
+//#include<stddef.h>
+//struct s {
+//	char c;
+//	int i;
+//	double d;
+//};
+//int main()
+//{
+//	printf("%d\n",offsetof(struct s,c));
+//	printf("%d\n", offsetof(struct s, i));
+//	printf("%d\n", offsetof(struct s, d));
+//	return 0;
+//}
+
+//结构体传参 - 结构体传参的时候，要传结构体的地址
+//#include<stdio.h>
+//struct s {
+//	int a;
+//	char c;
+//	double d;
+//};
+//
+//void Init(struct s*ps)
+//{
+//	ps->a = 100;
+//	ps->c = 'w';
+//	ps->d = 3.14;
+//}
+//
+////传值
+//void Print1(struct s tmp)
+//{
+//	printf("%d %c %lf\n",tmp.a,tmp.c,tmp.d);
+//}
+////传址
+//void Print2(const struct s* ps)
+//{
+//	printf("%d %c %lf\n",ps->a,ps->c,ps->d);
+//}
+//int main()
+//{
+//	struct s a ={0};
+//	Init(&a);
+//	Print1(a);
+//	Print2(&a);
+//	/*a.a = 100;
+//	a.c = 'w';
+//	a.d = 3.14;
+//	printf("%d\n",a.a);*/
+//	return 0;
+//}
