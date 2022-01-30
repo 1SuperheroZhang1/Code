@@ -183,3 +183,51 @@
 //
 //    return 0;
 //}
+/*
+   fread()函数: 二进制输入函数
+   size_t fread(void * buffer,size_t size,size_t count,FILE* stream);
+   fwrite()函数: 二进制输出函数
+   size_t fwrite(const void* buffer,size_t size,size_t count,FILE* stream);
+*/
+//struct S {
+//    char name[20];
+//    int age;
+//    double score;
+//};
+//int main()
+//{
+//    struct S s = { "张三",20,89 };
+//    FILE* pf = fopen("text.txt","wb");
+//    if (pf == NULL)
+//    {
+//        return 0;
+//    }
+//    //二进制的形式写文件
+//    fwrite(&s,sizeof(struct S),1,pf);
+//    //关闭文件
+//    fclose(pf);
+//    pf = NULL;
+//    return 0;
+//}
+struct S {
+    char name[20];
+    int age;
+    double score;
+};
+int main()
+{
+    //struct S s = { "张三",20,89 };
+    struct S tmp = {0};
+    FILE* pf = fopen("text.txt", "rb");
+    if (pf == NULL)
+    {
+        return 0;
+    }
+    //二进制的形式读文件
+    fread(&tmp, sizeof(struct S), 1, pf);
+    printf("%s %d %lf\n",tmp.name,tmp.age,tmp.score);
+    //关闭文件
+    fclose(pf);
+    pf = NULL;
+    return 0;
+}
