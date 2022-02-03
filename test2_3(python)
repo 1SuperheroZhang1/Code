@@ -1,0 +1,513 @@
+# -*- coding:utf-8 -*-
+def test(a, b, *args):
+    print(a)
+    print(b)
+    print(args)
+
+test(11, 22, 33, 44, 55, 66, 77, 88, 99)
+
+counter = 1
+def doLotsOfStuff():
+    global counter
+    for i in (1, 2, 3):
+        counter += 1
+doLotsOfStuff()
+print (counter)
+
+str1 = ''
+str2 = ' '
+if not str1:
+    print(1)
+elif not str2:
+    print(2)
+else:
+    print(0)
+
+def outer():
+
+    def inner():
+
+        print('inner',end=" ")
+
+    print('outer',end = " ")
+
+    return inner
+
+outer()
+
+name ="顺顺"
+def f1():
+    print(name)
+def f2():
+    name ="丰丰"
+f1()
+f1()
+f2()
+
+list1 = {'1':1,'2':2}
+list2 = list1
+list1['1'] = 5
+sum = list1['1'] + list2['1']
+print(sum)
+
+s1="aabbcc"
+s2="abc"
+if s2 in s1:
+    print("s2是s1的子串")
+else:
+    print("s2不是s1的子串")
+
+s1="aabbcc"
+s2="abc"
+find=s1.find(s2)
+if find!=-1:
+    print("s2是s1的子串")
+else:
+    print("s2不是s1的子串")
+
+#s1="aabbcc"
+#s2="abc"
+#index=s1.index(s2)
+#if index>-1:
+#    print("s2是s1的子串")
+#else:
+#    print("s2不是s1的子串")
+
+n = 1000
+while n > 1:
+    print(n)
+    n = n / 2
+
+import copy
+a = [1, 2, 3, 4, ['a', 'b']]
+b = a
+c = copy.copy(a)
+d = copy.deepcopy(a)
+a.append(5)
+a[4].append('c')
+
+print(a)
+print(b)
+print(c)
+print(d)
+
+#sets = {1, 2, 3, 4, 5}
+#print(sets[2])
+
+strs = ' I like python '
+one = strs.strip()
+print(one)
+two = strs.rstrip()
+print(two)
+
+kvps = { '1' : 1, '2' : 2 }
+theCopy = kvps.copy()
+kvps['1'] = 5
+sum = kvps['1'] + theCopy['1']
+print(sum)
+dicts = {}
+dicts[(1, 2)] = ({3, (4, 5)})
+print(dicts)
+
+import re
+str1 = "Python's features"
+str2 = re.match( r'(.*)on(.*?) .*', str1, re.M|re.I)
+print (str2.group(1))
+
+a=[2, 4, 6, 8, 20,30,40]
+print(a[::2])
+print(a[-2:])
+
+a=[1,2,3]
+b=[1,2,4]
+print(id(a[1])==id(b[1]))
+
+strs = 'I like python'
+one = strs.find('a')
+print(one)
+#two = strs.index('a')
+#print(two)
+
+lis = ['apple','lemon','pear','peach']
+
+def fn(x):
+    return x[::-1]
+lis.sort(key=fn,reverse=True)
+print(lis)
+
+def adder(x):
+    def wrapper(y):
+        return x + y
+    return wrapper
+adder5 = adder(5)
+print(adder5(adder5(6)))
+
+for i in range(2):
+    print (i)
+for i in range(4,6):
+    print (i)
+
+#x=(y=z+1)
+
+#import numpy as np
+#a = np.repeat(np.arange(5).reshape([1,-1]),10,axis = 0)+10.0
+#b = np.random.randint(5, size= a.shape)
+#c = np.argmin(a*b, axis=1)
+#b = np.zeros(a.shape)
+#b[np.arange(b.shape[0]), c] = 1
+#print(b)
+
+for i in range(1, 11):
+    if i % 2 == 0:
+           continue
+    print(i)
+
+one = (1, 2, 3)
+two = ('a', 'b')
+print(one + two)
+
+#func = lambda x:x%2
+#result = filter(func, [1, 2, 3, 4, 5])
+#print(list(result))
+
+str1 = "Hello,Python";
+str2 = "Python";
+print(str1.index(str2));
+
+def dec(f):
+    n = 3
+    def wrapper(*args,**kw):
+        return f(*args,**kw) * n
+    return wrapper
+
+@dec
+def foo(n):
+    return n * 2
+
+def outer(fn):
+
+    print('outer')
+
+    def inner():
+
+        print('inner')
+
+        return fn
+
+    return inner
+
+@outer
+
+def fun():
+
+    print('fun')
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+print(a+b)
+
+a=[1,2,3,4,5,6,7,8,9,10];
+#print(list(filter(lambda x:x%2==0,a)))
+
+class Base(object):
+
+    count = 0
+
+    def __init__(self):
+
+        pass
+b1 = Base()
+b2 = Base()
+
+b1.count = b1.count + 1
+
+print(b1.count,end=" ")
+
+print(Base.count,end=" ")
+
+print(b2.count)
+
+for i in range(2):
+    print(i)
+for i in range(4,6):
+    print(i)
+
+names = ["Andrea", "Aaslay", "Steven", "Joa"]
+lists = []
+for name in names:
+    if name.count('a') >= 2:
+        lists.append(name)
+print(lists)
+
+def fun(a,*,b):
+
+    print(b)
+
+#fun(1,2,3,4)
+
+class Person:
+    def __init__(self):
+        pass
+    def getAge(self):
+        print (__name__)
+p = Person()
+p.getAge()
+
+a = 100
+b = 14
+print(divmod(a, b))
+
+strs = ['a', 'ab', 'abc', 'abcd']
+dicts ={}
+for i in range(len(strs)):
+    dicts[i] = strs[i]
+print(dicts)
+
+dicts = {'a': 1, 'b': 2, 'c': 3}
+#print(dicts.pop())
+
+def fun(a=(),b=[]):
+
+    a += (1,)
+
+    b.append(1)
+
+    return a,b
+
+fun()
+
+print(fun())
+
+def bar(multiple):
+    def foo(n):
+        return multiple ** n
+    return foo
+print(bar(2)(3))
+
+info = {'name':'班长', 'id':100, 'sex':'f', 'address':'北京'}
+age = info.get('age')
+print(age)
+age=info.get('age',18)
+print(age)
+
+strs = '123456'
+print(strs.find('9'))
+
+sizes = ['S','M']
+
+colors = ['white','black']
+
+shirts = [(size,color) for color in colors for size in sizes]
+
+print(shirts)
+
+class A(object):
+    pass
+
+class B(A):
+    pass
+
+b = B()
+
+print(not 1 and 1)
+
+print('\n'.join(['a', 'b', 'c']))
+
+print([2] in [1, 2, 3])
+
+str = "Hello,Python";
+suffix = "Python";
+print (str.endswith(suffix,2));
+
+b1=[1,2,3]
+b2=[2,3,4]
+b3 = [val for val in b1 if val in b2]
+print (b3)
+
+nums = set([1,2,2,3,3,3,4])
+print (len(nums))
+
+
+a = [1]
+
+b = 2
+
+c = 1
+
+def fn(lis,obj):
+
+    lis.append(b)
+
+    obj = obj + 1
+
+    return lis,obj
+
+fn(a,c)
+
+print(fn(a,c))
+
+lists = [1, 2, 3, 4, 5, 6]
+lists.append([7,8,9])
+print(lists)
+
+truple = (1, 2, 3)
+print(truple*2)
+
+k = 1000
+while k > 1:
+    print(k)
+    k = k/2
+
+tmp = [1, 2, 3, 4, 5, 6]
+print(tmp[5::-2])
+
+strs = 'I like python and java'
+one = strs.find('n')
+print(one)
+two = strs.rfind('n')
+print(two)
+
+strs = 'abcd12efg'
+print(strs.upper().title())
+
+dicts = {'one': 1, 'two': 2, 'three': 3}
+dicts['four'] = 4
+dicts['one'] = 6
+print(dicts)
+
+nl = [1,2,5,3,5]
+
+nl.append(4)
+nl.insert(0,7)
+nl.sort()
+
+print(nl)
+
+list = ['1', '2', '3', '4', '5']
+print(list[10:])
+
+dicts = {'one': 1, 'two': 2, 'three': 3}
+print(dicts['one'])
+#print(dicts['four'])
+
+str1 = "exam is a example!"
+str2 = "exam"
+print(str1.find(str2, 7))
+
+print(r"\nwoow")
+
+def f(x):
+    if x == 0:
+        return 0
+    elif x == 1:
+        return 1
+    else:
+        return (x*f(x-1))
+print(f(5))
+
+res = 0
+for i in range(1, 4):
+    for j in range(1, 4):
+        for k in range(1, 4):
+            if i != j and i != k and j != k:
+                res += 1
+print(res)
+
+info = {'name':'班长', 'id':100, 'sex':'f', 'address':'北京'}
+age = info.get('age')
+print(age)
+age=info.get('age',18)
+print(age)
+
+for i in range(5):
+    if i == 2:
+        pass
+    print(i)
+
+tmp = [2, 1, 5, 4, 7]
+print(max(tmp))
+print(tmp.index(max(tmp)))
+
+lists = [1, 2, 2, 3, 3, 3]
+print(lists.count(3))
+print(lists.pop())
+lists.pop()
+print(lists)
+
+numbers = [1, 2, 3, 4]
+numbers.append([5,6,7,8])
+print(len(numbers))
+
+#dicts = {}
+#dicts[([1, 2])] = 'abc'
+#print(dicts)
+
+for i in 'python':
+    if i == 'h':
+        break
+    print(i)
+
+trupls = [(1, 2), (2, 3, 4), (4, 5)]
+lists = []
+for tru in trupls:
+    for num in tru:
+        lists.append(num)
+print(lists)
+
+def chanageList(nums):
+    nums.append('c')
+    print("nums", nums)
+str1 = ['a', 'b']
+# 调用函数
+chanageList(str1)
+print("str1", str1)
+
+strs = ' I like python '
+one = strs.split(' ')
+two = strs.strip()
+print(one)
+print(two)
+
+a = map(lambda x: x**3, [1, 2, 3])
+#list(a)
+
+lists = [1, 1, 2, 3, 4, 5, 6]
+lists.remove(1)
+lists.extend([7,8,9])
+print(lists)
+
+lists = [1, 2, 3, 4]
+tmp = 0
+for i,j in enumerate(lists):
+    tmp += i * j
+print(tmp)
+
+a=[2,3]
+print(a*2)
+
+#lst=[1,2,'a',[1,2]]
+#set(lst)
+
+#b=1
+#def fn():
+#    nonlocal b
+#    b=b+1
+#    print(b)
+#fn()
+
+a=[b for b in range(10) if b % 2 == 0]
+print(b)
+#tup=(('onion','apple'),('tomato','pear'))
+#for _,fruit in tup:
+#    print(fruit)
+
+a = 10
+b = 3
+print(a // b)
+print(a % b)
+print(a / b)
+
+strs = ['a', 'ab', 'abc', 'python']
+y = filter(lambda s: len(s) > 2, strs)
+tmp = list(map(lambda s: s.upper(), y))
+print(tmp)
