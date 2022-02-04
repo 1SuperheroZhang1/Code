@@ -1,0 +1,140 @@
+import java.util.*;
+//public class Demo2 {
+//    public static void main(String args[])
+//    {
+//        String str=new String("hello");
+//        if(str=="hello")
+//        {
+//            System.out.println("true");
+//        }
+//        else     {
+//            System.out.println("false");
+//        }
+//    }
+//public static void main(String args[]) {
+//    List  Listlist1 = new ArrayList();
+//    Listlist1.add(0);
+//    List Listlist2 = Listlist1;
+//    System.out.println(Listlist1.get(0) instanceof Integer);
+//    System.out.println(Listlist2.get(0) instanceof Integer);
+//}
+
+//}
+//class Demo2 {
+//    public static void main(String[] args) {
+//        System.out.println(new B().getValue());
+//    }
+//    static class A {
+//        protected int value;
+//        public A (int v) {
+//            setValue(v);
+//        }
+//        public void setValue(int value) {
+//            this.value= value;
+//        }
+//        public int getValue() {
+//            try {
+//                value ++;
+//                return value;
+//            } finally {
+//                this.setValue(value);
+//                System.out.println(value);
+//            }
+//        }
+//    }
+//    static class B extends A {
+//        public B () {
+//            super(5);
+//            setValue(getValue()- 3);
+//        }
+//        public void setValue(int value) {
+//            super.setValue(2 * value);
+//        }
+//    }
+//}
+class Demo2 {
+//    public static void main(String[] args)
+//    {
+//        int ret=13&17;
+//        System.out.println(ret);
+//    }
+//    String str = new String("good");
+//    char[] ch = {'a','b','c'};
+//    public static void main(String[] args) {
+//        Demo2 ex = new Demo2();
+//        ex.change(ex.str, ex.ch);
+//        System.out.print(ex.str +"and");
+//        System.out.print(ex.ch);
+//    }
+//
+//    public void change(String str, char ch[]){
+//        str= "test ok";
+//        ch[0]= 'g';
+//    }
+//    public static void main(String[] args)
+//    {
+//        int x = 0;
+//        int y = 0;
+//        int k = 0;
+//        for (int z = 0; z < 5; z++) {
+//            if ((++x > 2) && (++y > 2) && (k++ > 2))
+//            {
+//                x++;
+//                ++y;
+//                k++;
+//            }
+//        }
+//        System.out.println(x + ""+y + "" +k);
+//    }
+//    public static void main(String[] args){
+//        Integer var1=new Integer(1);
+//        Integer var2=var1;
+//        doSomething(var2);
+//        System.out.print(var1.intValue());
+//        System.out.print(var1==var2);
+//    }
+//    public static void doSomething(Integer integer){
+//        integer=new Integer(2);
+//    }
+//}
+//    public static void main(String[] args)
+//    {
+//        Integer i01=59;
+//        int i02=59;
+//        Integer i03=Integer.valueOf(59);
+//        Integer i04=new Integer(59);
+//        System.out.println(i01==i02);
+//        System.out.println(i01==i03);
+//        System.out.println(i03==i04);
+//        System.out.println(i02==i04);
+//    }
+//    public Demo2() {
+//        System.out.println("A的构造函数");
+//    }
+//    {
+//        System.out.println("A的构造代码块");
+//    }
+//    static {
+//        System.out.println("A的静态代码块");
+//    }
+//    public static void main(String[] args) {
+//        Demo2 a = new Demo2();
+//    }
+    public static void main(String[] args) {
+        System.out.println(test());
+
+    }
+    private static int test() {
+        int temp = 1;
+        try {
+            System.out.println(temp);
+            return ++temp;
+        } catch (Exception e) {
+            System.out.println(temp);
+            return ++temp;
+        } finally {
+            ++temp;
+            System.out.println(temp);
+        }
+    }
+}
