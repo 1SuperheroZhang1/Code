@@ -1,0 +1,103 @@
+#define _CRT_SECURE_NO_WARNINGS
+//函数模块练习题
+//1.输入一个数n（1234），实现按顺序输出1 2 3 4
+//#include<stdio.h>
+//void print(int n)
+//{
+//	if (n > 9)
+//	{
+//		print(n/10);
+//	}
+//	printf("%d ",n%10);
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d",&n);
+//	print(n);
+//
+//	return 0;
+//}
+//2.斐波那契数列的非递归实现
+//#include<stdio.h>
+//int fib(int n)
+//{
+//	int a = 1;
+//	int b = 1;
+//	int c = 1;
+//	while (n > 2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d",&n);
+//	int ret=fib(n);
+//	printf("ret=%d\n",ret);
+//	return 0;
+//}
+//3.斐波那契数列的递归实现
+//#include<stdio.h>
+//int fib(int n)
+//{
+//	if (n <= 2)
+//		return 1;
+//	else
+//		return fib(n - 1) + fib(n - 2);
+//}
+//int main()
+//{
+//	int n = 0;
+//	int ret = 0;
+//	scanf("%d",&n);
+//	ret = fib(n);
+//	printf("ret=%d\n",ret);
+//	return 0;
+//}
+//4.求n的阶乘的非递归方式实现
+//#include<stdio.h>
+//int fac(int n)
+//{
+//	int i = 0;
+//	int item = 1;
+//	for (i = 1; i <= n; i++)
+//	{
+//		item *= i;
+//	}
+//	return item;
+//}
+//int main()
+//{
+//	int n = 0;
+//	int ret = 0;
+//	scanf("%d", &n);
+//	ret = fac(n);
+//	printf("ret=%d\n",ret);
+//
+//	return 0;
+//}
+//5.求n的阶乘的非递归方式实现
+//#include<stdio.h>
+//int fac(int n)
+//{
+//	if (n <= 1)
+//		return 1;
+//	else
+//		return n * fac(n - 1);
+//
+//}
+//int main()
+//{
+//	int ret = 0;
+//	int n = 0;
+//	scanf("%d",&n);
+//	ret = fac(n);
+//	printf("ret=%d\n",ret);
+//	return 0;
+//}
