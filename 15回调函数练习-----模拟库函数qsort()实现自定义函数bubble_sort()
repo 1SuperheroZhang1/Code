@@ -1,13 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<string.h>
-#define _CRT_SECURE_NO_WARNINGS 1
 //模拟库函数qsort()实现自定义函数bubble_sort()使得该函数具备比较任意数据类型数据的功能。
 //void qsort(void* base,size_t num,size_t byte,int(*compare)(const void*e1,const void*e2))
-//第一个参数 待排序数组的首元素地址
-//第二个参数 待排序数组的元素个数
-//第三个参数 待排序数组的每个元素的大小 - 单位是字节
-//第四个参数 函数指针 - 比较两个元素的所用函数的地址 -这个函数需要自定义
-//           函数指针的两个参数 待比较的两个元素的地址
+	//base第一个参数 待排序数组的首元素地址
+	//num第二个参数  待排序数组的元素个数
+	//byte第三个参数 待排序数组的每个元素的大小 - 单位是字节
+	//compare第四个参数 函数指针 - 比较两个元素的所用函数的地址 -这个函数需要自定义  函数指针的两个参数 - 待比较的两个元素的地址
 struct Stu
 {
 	char name[20];
