@@ -1,13 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
-//strstr()函数 - 查找字符串子串
-//char* strstr(const char* string,const char* strCharSet);
+#include<assert.h>
+//8.strstr()函数 - 查找字符串子串
+//函数原型:char* strstr(const char* string,const char* strCharSet);
 //NULL - 空指针
 //NUL/Null - '\0'
 //KMP算法
-//#include<string.h>
-//#include<assert.h>
 //char* my_strstr(const char* p1, const char* p2)
 //{
 //	assert(p1 != NULL);
@@ -47,8 +46,8 @@
 //	//char* p1 = "abcdef";
 //	//char* p1 = "abcdefabcdef";//如果需要查找的字符子串在原字符串中出现多次，返回第一次出现的地址
 //	//char* p2 = "def";
-//	char* p2 = "bbc";
-//	//char* p2 = "defq";
+//	//char* p2 = "bbc";
+//	char* p2 = "defq";
 //	//char * ret=strstr(p1,p2);
 //	char* ret = my_strstr(p1, p2);
 //	if (ret == NULL)
@@ -62,8 +61,8 @@
 //
 //	return 0;
 //}
-//strtok()函数 - 字符串切割函数
-/*char* strtok(char* str, const char* sep);
+//9.strtok()函数 - 字符串切割函数
+/*函数原型:char* strtok(char* str, const char* sep);
   sep参数是一个字符串，定义了用作分隔符的字符集合
   第一个参数指定一个字符串，它包含了0个或者多个由sep字符串中一个或者多个分隔符分割的标记
   strtok函数找到str中的下一个标记，并将其用'\0'结尾，返回一个指向这个标记的指针
@@ -75,7 +74,7 @@
 
 //int main()
 //{
-//	//127.0.0.1     .
+//	//127.0.0.1     
 //	//127 0 0 1    strtok
 //	//IP地址 - 点分十进制的表示方式
 //	char arr[] = "127.0.0.1";
@@ -92,26 +91,26 @@
 //	}
 //	return 0;
 //}
-//strerror()函数 - 错误信息函数
-/*  char* strerror(int errnum);
+//10.strerror()函数 - 错误信息函数
+/*函数原型:char* strerror(int errnum);
     返回错误码所对应的错误信息。
 */
 //#include<errno.h>
 //int main()
 //{
-//    //错误码 -         错误信息
-//    //0      -         No error
-//    //1      -         Operation not permitted
-//    //2      -         No such file or directory
+//    //错误码   -         错误信息
+//    //0        -         No error
+//    //1        -         Operation not permitted
+//    //2        -         No such file or directory
 //    //...
-//    //char* str = strerror(0);  //0 - No error
-//    //char* str = strerror(1);  //1 - Operation not permitted
+//    //char* str = strerror(0);    //0 - No error
+//    //char* str = strerror(1);    //1 - Operation not permitted
 //    //char* str = strerror(2);    //2 - No such file or directory
 //    /*errno是一个全局的错误码的变量
 //      当C语言的库函数在执行过程中，发生了错误，就会把对应的错误码，赋值到errno中。
 //    */
 //
-//    /*char* str = strerror(errno);
+//   /* char* str = strerror(errno);
 //    printf("%s\n",str);*/
 //
 //    //打开文件
@@ -128,7 +127,7 @@
 //
 //    return 0;
 //}
-//
+
 #include<ctype.h>
 //字符分类函数
 // 函数                         如果他的参数符合下列条件就返回真
@@ -150,8 +149,8 @@
 //{
 //    //char ch = 'w';
 //    //int ret = islower(ch);
-//    //char ch = '@';
-//    //int ret = islower(ch);
+//   /* char ch = '@';
+//    int ret = islower(ch);*/
 //    /*int a = 2;
 //    int ret = isdigit(a);
 //    printf("%d\n",ret);*/
@@ -172,133 +171,3 @@
 //    printf("%s\n",arr);
 //    return 0;
 //}
-#include<stdio.h>
-#include<assert.h>
-//memcpy()函数 - 内存拷贝函数
-/* void memcpy(void * destination,const void * source,size_t num); num单位是字节
-   函数memcpy从source的位置开始向后复制num个字节的数据到destination的内存位置
-   这个函数在遇到'\0'的时候并不会停下来
-   如果source和destination有任何重叠，复制的结果都是未定义的
-   void * - 通用类型的指针 - 无类型的指针
-*/
-//struct S {
-//    char name[20];
-//    int age;
-//};
-//void* my_memcpy(void* dest, const void* src, size_t num)
-//{
-//    void* ret = dest;
-//    assert(dest != NULL);
-//    assert(src != NULL);
-//    while (num--)
-//    {
-//        *(char*)dest = *(char*)src;
-//        ++(char*)dest;
-//        ++(char*)src;
-//    }
-//    return ret;
-//}
-//int main()
-//{
-//    /*int arr1[] = {1,2,3,4,5};
-//    int arr2[5] = {0};
-//    memcpy(arr2,arr1,sizeof(arr1));*/
-//    struct S arr3[] = { {"zhangsan",20},{"lisi",30} };
-//    struct S arr4[3] = { 0 };
-//    //memcpy(arr4,arr3,sizeof(arr3));
-//    my_memcpy(arr4, arr3, sizeof(arr3));
-//    return 0;
-//}
-//memmove()函数 - 重复的内存拷贝函数
-/*  void* memmove(void * destination,const void * source,size_t count);
-    
-*/
-//C语言标准：
-//memcpy 只要处理 不重叠的内存拷贝就可以
-//memmove 处理重叠的内存拷贝
-//void* my_memmove(void* dest, void* src, size_t count)
-//{
-//	void* ret = dest;
-//	assert(dest != NULL);
-//	assert(src != NULL);
-//	if (dest<src || dest>(char*)src + count)
-//	{
-//		//前->后
-//	}
-//	else
-//	{
-//		//后->前
-//	}
-//	return ret;
-//}
-//void* my_memmove(void * dest,void *src,size_t count)
-//{
-//	void* ret = dest;
-//	assert(dest!=NULL);
-//	assert(src!=NULL);
-//	if (dest<src || dest>(char*)src + count)
-//	{
-//		//前->后
-//	}
-//	else
-//	{
-//		//后->前
-//	}
-//	if (dest < src)
-//	{
-//		//前->后
-//		while (count--)
-//		{
-//			*(char*)dest = *(char*)src;
-//			++(char*)dest;
-//			++(char*)src;
-//		}
-//	}
-//	else
-//	{
-//		//后->前
-//		while (count--)
-//		{
-//			*((char*)dest + count) = *((char*)src + count);
-//		}
-//	}
-//	return ret;
-//}
-//int main()
-//{
-//	int arr[] = {1,2,3,4,5,6,7,8,9,10};
-//	//memmove(arr + 2, arr, 20);//处理内存重叠的情况
-//	memcpy(arr + 2, arr, 20);
-//
-//	int i = 0;
-//	for (i = 0; i < 10; i++)
-//	{
-//		printf("%d ",arr[i]);
-//	}
-//	return 0;
-//}
-//memcmp()函数 - 内存比较函数
-/*int memcmp(const void* ptr1, const void* ptr2, size_t num);  num 单位是字节
-  比较从ptr1和ptr2指针开始的num个字节
-*/
-
-//int main()
-//{
-//    int arr1[] = {1,2,3,4,5};
-//    int arr2[] = {1,2,5,4,3};
-//    int ret = memcmp(arr1, arr2, 8);
-//    printf("ret=%d\n",ret);
-//    return 0;
-//}
-
-//memset()函数 - 内存设置函数
-/* void* memset(void * dest,int c,size_t count);   count单位是字节
-   c为要设置的字符
-   count 为设置字符的个数
-*/
-int main()
-{
-    char arr[10] = "";
-    memset(arr,'#', 10);
-    return 0;
-}
