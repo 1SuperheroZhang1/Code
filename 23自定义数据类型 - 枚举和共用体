@@ -1,5 +1,5 @@
 #include<stdio.h>
-//枚举：把可能的取值一一列举
+//枚举enum：把可能的取值一一列举
 //使用#define定义常量
 //#define RED 0
 //#define GREEN 1
@@ -8,6 +8,7 @@
 //int main()
 //{
 //	int color = RED;
+//	printf("%d\n", color);
 //	return 0;
 //}
 /*枚举的优点：
@@ -41,12 +42,12 @@
 //
 //	printf("%d\n",sizeof(c));//enum类型的大小为整形的大小 - 4个字节
 //	printf("%d %d %d\n",RED,GREEN,BLUE);
-//	//printf("%d %d %d\n",MALE,FEMALE,SECRET);
+//	printf("%d %d %d\n",MALE,FEMALE,SECRET);
 //	return 0;
 //}
 //C语言源代码-->预编译-->编译-->链接-->可执行程序
 
-//联合(共用体)
+//联合(共用体)union
 /*联合类型的定义 - 联合也是一种特殊的自定义类型
                    这种类型定义的变量也包含一系列的成员
      特征是这些成员公用同一块空间(所以联合体也叫共用体)
@@ -57,8 +58,8 @@
 */
 //联合类型
 //union Un {
-//    char c;
-//    int i;
+//    char c;//1
+//    int i;//4
 //};
 //
 //int main()
@@ -127,18 +128,18 @@
 //    }*/
 //}
 
-/*联合体大小的计算
+/*联合体大小的计算 - 至少是联合体中最大成员的大小
   联合体的大小至少是最大成员的大小。
   当最大成员的大小不是最大对齐数的整数倍的时候，就要对齐到最大对齐数的整数倍
 */
 //union un {
-//    int a;//4 8 - 4
-//    char arr[5];//5  1  8 - 1
+//    int a;//4/8 - 4
+//    char arr[5];//5/8  1/8 - 1
 //};
 //
 //int main()
 //{
 //    union un u;
-//    printf("%d\n",sizeof(u));
+//    printf("%d\n",sizeof(u));//8
 //    return 0;
 //}
