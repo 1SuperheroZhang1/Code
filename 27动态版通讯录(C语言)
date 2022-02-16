@@ -1,5 +1,62 @@
+test.c
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include"contact.h"
+
+void menu()
+{
+	printf("********************************************\n");
+	printf("****1.add            2.del           *******\n");
+	printf("****3.search         4.modify        *******\n");
+	printf("****5.show           6.sort          *******\n");
+	printf("****0.exit                           *******\n");
+	printf("********************************************\n");
+}
+int main()
+{
+	int input = 0;
+	//创建通讯录
+	struct Contact con;//con就是通讯录，里面包含:data指针和size，capacity
+	//初始化通讯录
+	InitContact(&con);
+	do {
+		menu();
+		printf("请选择:>");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case ADD:
+			AddContact(&con);
+			break;
+		case DEL:
+			DelContact(&con);
+			break;
+		case SEARCH:
+			SearchContact(&con);
+			break;
+		case MODIFY:
+			ModifyContact(&con);
+			break;
+		case SHOW:
+			ShowContact(&con);
+			break;
+		case SORT:
+			SortContact(&con);
+			break;
+		case EXIT:
+			//销毁通讯录 - 释放动态开辟的内存
+			DestroyContact(&con);
+			printf("退出通讯录\n");
+			break;
+		default:
+			printf("选择错误\n");
+			break;
+		}
+	} while (input);
+	return 0;
+}
 contact.h
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -10,13 +67,13 @@ contact.h
 #define MAX_TELE 12
 #define MAX_ADDR 30
 enum Option {
-	EXIT,
-	ADD,
-	DEL,
-	SEARCH,
-	MODIFY,
-	SHOW,
-	SORT
+	EXIT,//0
+	ADD,//1
+	DEL,//2
+	SEARCH,//3
+	MODIFY,//4
+	SHOW,//5
+	SORT//6
 };//枚举增加了代码的可读性
 struct PeoInfo {
 	char name[MAX_NAME];
@@ -29,7 +86,7 @@ struct PeoInfo {
 struct Contact {
 	struct PeoInfo *data;//存放1000个信息
 	int size;//记录已有的元素个数
-	int capacity;//当前通讯录的最大容量
+	int capacity;//记录当前通讯录的最大容量
 };
 //函数声明
 //初始化通讯录
@@ -40,12 +97,15 @@ void AddContact(struct Contact* ps);
 void DelContact(struct Contact* ps);
 //打印通讯录中指定联系人的信息
 void ShowContact(const struct Contact* ps);
+//查找通讯录中的联系人信息
 void SearchContact(const struct Contact* ps);
+//修改通讯录中的联系人信息
 void ModifyContact(struct Contact* ps);
 void SortContact(struct Contact* ps);
+//摧毁通讯录
 void DestroyContact(struct Contact*ps);
 contact.c
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS 1
 #include"contact.h"
 
 //初始化函数
@@ -240,61 +300,4 @@ void DestroyContact(struct Contact* ps)
 {
 	free(ps->data);
 	ps->data = NULL;
-}
-test.c
-#define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
-#include"contact.h"
-
-void menu()
-{
-	printf("********************************************\n");
-	printf("****1.add            2.del           *******\n");
-	printf("****3.search         4.modify        *******\n");
-	printf("****5.show           6.sort          *******\n");
-	printf("****0.exit                           *******\n");
-	printf("********************************************\n");
-}
-int main()
-{
-	int input = 0;
-	//创建通讯录
-	struct Contact con;//con就是通讯录，里面包含:data指针和size，capacity
-	//初始化通讯录
-	InitContact(&con);
-	do {
-		menu();
-		printf("请选择:>");
-		scanf("%d", &input);
-		switch (input)
-		{
-		case ADD:
-			AddContact(&con);
-			break;
-		case DEL:
-			DelContact(&con);
-			break;
-		case SEARCH:
-			SearchContact(&con);
-			break;
-		case MODIFY:
-			ModifyContact(&con);
-			break;
-		case SHOW:
-			ShowContact(&con);
-			break;
-		case SORT:
-			SortContact(&con);
-			break;
-		case EXIT:
-			//销毁通讯录 - 释放动态开辟的内存
-			DestroyContact(&con);
-			printf("退出通讯录\n");
-			break;
-		default:
-			printf("选择错误\n");
-			break;
-		}
-	} while (input);
-	return 0;
 }
