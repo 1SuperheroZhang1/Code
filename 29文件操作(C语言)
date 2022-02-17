@@ -2,9 +2,10 @@
 #include<stdio.h>
 #include<string.h>
 #include<errno.h>
-//文件:磁盘上的文件
-//程序文件:包括源程序文件(后缀为.c)、目标文件(Windows环境后缀名为.obj)、和可执行程序(Windows环境后缀名为.exe)
-//数据文件:文件的内容不一定是程序，而是程序运行时读写的数据，比如程序运行需要从中读取数据的文件，或者输出内容的文件
+/*文件:磁盘上的文件
+    程序文件:包括源程序文件(后缀为.c)、目标文件(Windows环境下后缀名为.obj)、和可执行程序(Windows环境下后缀名为.exe)
+    数据文件:文件的内容不一定是程序，而是程序运行时读写的数据，比如程序运行需要从中读取数据的文件，或者输出内容的文件
+*/
 /*文件名:一个文件要有一个唯一的文件标识，以便用户识别和引用。
   文件名包括3部分:
              文件路径+文件名主干+文件后缀    例如:C:\code\test.txt
@@ -18,14 +19,14 @@
 
 */
 /* 文件缓冲区:
-   ANSIC标准采用"缓冲文件系统"处理数据文件。
+   ANSI C标准采用"缓冲文件系统"处理数据文件。
    缓冲文件系统:系统自动地在内存中为程序中每一个正在使用的文件开辟一块"文件缓冲区"。
-   从内存向磁盘输出数据会先送到内存的缓冲区，装满缓冲区后才仪器送到磁盘上。
+   从内存向磁盘输出数据会先送到内存的缓冲区，装满缓冲区后才一起送到磁盘上。
    从磁盘向计算机读入数据，则从磁盘文件中读取数据输入到内存缓冲区(充满缓冲区),
    然后再从缓冲区逐个的将数据送到程序数据区(程序变量)。
    缓冲区的大小是根据C编译系统决定的
 */
-/*文件指针:
+/*文件指针:FILE*
   缓冲文件系统中，关键的概念是"文件类型指针",简称"文件指针".
   每个被使用的文件都在内存中开辟了一个相应的文件信息区，用来存放文件的相关信息。(如文件名、文件状态、文件位置等)
   这些信息是保存在结构体变量当中的。该结构体类型由系统声明。取名FILE。
@@ -39,24 +40,33 @@
 //int main()
 //{
 //	int a = 10000;
-//	FILE* pf = fopen("test.txt","wb");
+//	FILE* pf = fopen("test.txt","wb");//以二进制写的形式打开文件
 //	fwrite(&a,4,1,pf);//以二进制方式写入文件中
+//	/*
+//	 size_t fwrite(const void* buffer, size_t size, size_t count, FILE* stream);
+//     返回值:返回实际写入的数据块数目
+//	 (1)buffer:是一个指针，对fwrite来说，是要获取数据的地址;
+//     (2)size:要写入内容的单字节数;
+//     (3)count:要进行写入size字节的数据项的个数;
+//	 (4)stream:目标文件指针;
+//	 (5)返回实际写入的数据项个数count。
+//	*/
 //	fclose(pf);
 //	pf = NULL;
 //	return 0;
 //}
 /*文件的打开和关闭:文件在读写之前应该先打开文件，在使用结束之后应该关闭文件。
   在编写程序的时候，打开文件的同时，都会返回一个FILE*的指针变量指向该文件，也相当于建立了指针与文件的关系。
-  ANSIC规定使用fopen()函数来打开文件，fclose()函数来关闭文件
-  FILE * fopen(const char* filename,const char* mode);
+  ANSI C规定使用fopen()函数来打开文件，fclose()函数来关闭文件
+  FILE * fopen(const char* filename,const char* mode);//filename - 文件名，mode - 打开模式
   int fclose(FILE *stream);
 */
 //int main()
 //{
 //    //打开文件
-//    //绝对路径
+//    //绝对路径 - 
 //    //fopen("C:\\Users\\张先森\\source\\repos\\C语言文件操作\\C语言文件操作\\test.txt", "r"); 
-//    //相对路径
+//    //相对路径 - 
 //    //..表示上一级路径
 //    //.表示当前路径
 //    FILE *pf=fopen("test.txt", "r");//"r"以只读的方式打开文件，如果文件不存在，则打开失败，报错。
@@ -74,8 +84,18 @@
 //    return 0;
 //}
 /* 文件的顺序读写:
-    写函数: fputc()函数 - int fputc(int c,FILE* stream);   
+    写函数: fputc()函数 - int fputc(int c,FILE* stream);
+    函数名称:写字符文件函数fputc()
+    函数格式:int fputc (int c, File *fp)
+    参数解释:fp为文件指针，它的值是执行fopen()打开文件时获得的。
+             c为输出的字符量。
     读函数: fgetc()函数 - int fgetc(FILE* stream);
+    定义函数:int fgetc(FILE * stream);
+    函数说明:
+                fgetc()从参数stream所指的文件中读取一个字符，并把它作为一个字符返回。
+                若读到文件尾或出现错误时，它就返回EOF，你必须通过ferror或feof来区分这两种情况。
+    返回值:
+                fgetc()会返回读取到的字符，若返回EOF则表示到了文件尾，或出现了错误。
 */
 //int main()
 //{
@@ -101,7 +121,7 @@
 //    {
 //        printf("%s\n", strerror(errno));
 //    }
-//    //写文件
+//    //读文件
 //    printf("%c ", fgetc(pfRead));//b
 //    printf("%c ", fgetc(pfRead));//i
 //    printf("%c ", fgetc(pfRead));//t
@@ -122,9 +142,9 @@
 //stdout FILE*
 //stderr FILE*
 
-int main()
-{
-    int ch = fgetc(stdin);
-    fputc(ch,stdout);
-    return 0;
-}
+//int main()
+//{
+//    int ch = fgetc(stdin);
+//    fputc(ch,stdout);
+//    return 0;
+//}
