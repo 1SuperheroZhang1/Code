@@ -1,5 +1,66 @@
+test.c
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include"contact.h"
+
+void menu()
+{
+	printf("********************************************\n");
+	printf("****1.add            2.del           *******\n");
+	printf("****3.search         4.modify        *******\n");
+	printf("****5.show           6.sort          *******\n");
+	printf("****7.save           0.exit          *******\n");
+	printf("********************************************\n");
+}
+int main()
+{
+	int input = 0;
+	//创建通讯录
+	struct Contact con;//con就是通讯录，里面包含:data指针和size，capacity
+	//初始化通讯录
+	InitContact(&con);
+	do {
+		menu();
+		printf("请选择:>");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case ADD:
+			AddContact(&con);
+			break;
+		case DEL:
+			DelContact(&con);
+			break;
+		case SEARCH:
+			SearchContact(&con);
+			break;
+		case MODIFY:
+			ModifyContact(&con);
+			break;
+		case SHOW:
+			ShowContact(&con);
+			break;
+		case SORT:
+			SortContact(&con);
+			break;
+		case EXIT:
+			SaveContact(&con);
+			//销毁通讯录 - 释放动态开辟的内存
+			DestroyContact(&con);
+			printf("退出通讯录\n");
+			break;
+		case SAVE:
+			SaveContact(&con);
+			break;
+		default:
+			printf("选择错误\n");
+			break;
+		}
+	} while (input);
+	return 0;
+}
 contact.h
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -11,14 +72,14 @@ contact.h
 #define MAX_TELE 12
 #define MAX_ADDR 30
 enum Option {
-	EXIT,
-	ADD,
-	DEL,
-	SEARCH,
-	MODIFY,
-	SHOW,
-	SORT,
-	SAVE
+	EXIT,//0
+	ADD,//1
+	DEL,//2
+	SEARCH,//3
+	MODIFY,//4
+	SHOW,//5
+	SORT,//6
+	SAVE//7
 };//枚举增加了代码的可读性
 struct PeoInfo {
 	char name[MAX_NAME];
@@ -51,7 +112,7 @@ void SaveContact(struct Contact* ps);
 //加载文件中的信息到通讯录
 void LoadContact(struct Contact *ps);
 contact.c
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS 1
 #include"contact.h"
 
 //初始化函数
@@ -75,7 +136,7 @@ void Check_Capacity(struct Contact* ps);
 void LoadContact(struct Contact* ps)
 {
 	struct  PeoInfo tmp= {0};
-	FILE* pfRead = fopen("contact.dat","rb");
+	FILE* pfRead = fopen("contact.dat","rb");//rb - 以二进制的形式读出
 	if (pfRead == NULL)
 	{
 		printf("LoadContact:%s\n",strerror(errno));
@@ -273,7 +334,7 @@ void DestroyContact(struct Contact* ps)
 }
 void SaveContact(struct Contact* ps)
 {
-	FILE* pfWrite = fopen("contact.dat","wb");
+	FILE* pfWrite = fopen("contact.dat","wb");//wb - 以二进制的形式写入
 	if (pfWrite == NULL)
 	{
 		printf("SaveContact:%s\n",strerror(errno));
@@ -288,65 +349,4 @@ void SaveContact(struct Contact* ps)
 	//关闭文件
 	fclose(pfWrite);
 	pfWrite = NULL;
-}
-test.c
-#define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
-#include"contact.h"
-
-void menu()
-{
-	printf("********************************************\n");
-	printf("****1.add            2.del           *******\n");
-	printf("****3.search         4.modify        *******\n");
-	printf("****5.show           6.sort          *******\n");
-	printf("****7.save           0.exit          *******\n");
-	printf("********************************************\n");
-}
-int main()
-{
-	int input = 0;
-	//创建通讯录
-	struct Contact con;//con就是通讯录，里面包含:data指针和size，capacity
-	//初始化通讯录
-	InitContact(&con);
-	do {
-		menu();
-		printf("请选择:>");
-		scanf("%d", &input);
-		switch (input)
-		{
-		case ADD:
-			AddContact(&con);
-			break;
-		case DEL:
-			DelContact(&con);
-			break;
-		case SEARCH:
-			SearchContact(&con);
-			break;
-		case MODIFY:
-			ModifyContact(&con);
-			break;
-		case SHOW:
-			ShowContact(&con);
-			break;
-		case SORT:
-			SortContact(&con);
-			break;
-		case EXIT:
-			//销毁通讯录 - 释放动态开辟的内存
-			SaveContact(&con);
-			DestroyContact(&con);
-			printf("退出通讯录\n");
-			break;
-		case SAVE:
-			SaveContact(&con);
-			break;
-		default:
-			printf("选择错误\n");
-			break;
-		}
-	} while (input);
-	return 0;
 }
