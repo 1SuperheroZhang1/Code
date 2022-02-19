@@ -513,3 +513,153 @@
 //	printf("%d\n",res);
 //	return 0;
 //}
+//void ss(char* s, char t) {
+//    while (*s) {
+//        if (*s == t) *s = t - 'a' + 'A';
+//        s++;
+//    }
+//}
+//int main() {
+//    char str1[100] = "abcddfefdbd", c = 'd';
+//    ss(str1, c);
+//    printf("%s\n", str1);
+//}
+//struct A{
+//    //0
+//    char a;//1/8 - 1
+//    //1 2 3 
+//    int b;//4/8 - 4
+//    //4 5 6 7
+//    char c;//1/8 - 1
+//    //8
+//    //9 10 11
+//};//12
+//int main()
+//{
+//    printf("%d\n",sizeof(struct A));
+//    return 0;
+//}
+//int main()
+//{
+//	char* str1 = "hello";
+//	short* p1;
+//	int      p2[2];
+//
+//	printf("%d\n", sizeof(str1));
+//	printf("%d\n", sizeof(p1));
+//	printf("%d\n", sizeof(p2));
+//
+//	return 0;
+//}
+//#define MA(x, y)  (x*y)
+//int main()
+//{
+//	int i = 0;
+//	i = 5;
+//	i = MA(i, i + 1) - 7;
+//	printf("%d\n",i);
+//	return 0;
+//}
+//int main()
+//{
+//	/*int a = 3;
+//	int b = 5;
+//	printf("a=%d b=%d\n", a, b);
+//	a = b;
+//	printf("a=%d b=%d\n",a,b);*/
+//	return 0;
+//}
+//int main(void)
+//{
+//	//int x = 3, y = 4, z = 5;
+//	//int ret=!(x + y) + z - 1 && y + z / 2;
+//	//printf("%d\n",ret);
+//	printf("%p %p %p %p %p %p %p %p" "\0X41", "\0x41", "\X41", "\x41", "\a", "\b", "\c", "\r");
+//	return 0;
+//}
+//#include <stdio.h>
+//#define ADD(x) x + x
+//main() {
+//    int m = 1, n = 2, k = 3, sum;
+//    sum = ADD(m + n) * k;//1+2+1+2*3=4+6=10
+//    printf("sum = %d\n", sum);
+//}
+//int main() {
+//	int i = 10;
+//	int j = 1;
+//	const int* p1;//(1) -指向常量字符串的指针
+//	int const* p2 = &i; //(2) - 指向字符串的常量指针
+//	p2 = &j;//(3)
+//	int* const p3 = &i;//(4) - 指向字符串的常量指针
+//	*p3 = 20;//(5)
+//	*p2 = 30;//(6)
+//	p3 = &j;//(7)
+//	return 0;
+//}
+//struct st_t {
+//    int status;
+//    short* pdata;
+//    char errstr[32];
+//};
+//int main()
+//{
+//    struct st_t st[16];
+//    char* p = (char*)(st[2].errstr + 32);
+//    printf("%d", (p - (char*)(st)));
+//    return 0;
+////}
+//#include <stdio.h>
+//class A
+//{
+//public:
+//    void f()
+//    {
+//        printf("A\n");
+//    }
+//};
+//
+//class B : public A
+//{
+//public:
+//    virtual void f()
+//    {
+//        printf("B\n");
+//    }
+//};
+//
+//int main()
+//{
+//    A* a = new B;
+//    a->f();
+//    delete a;
+//    return 0;
+//}
+//#include <stdio.h>
+//void fun(char** p) {
+//    int i;
+//    for (i = 0; i < 4; i++)
+//        printf("%s", p[i]);
+//}
+//main() {
+//    char* s[6] = { "ABCD", "EFGH", "IJKL", "MNOP", "QRST", "UVWX" };
+//    fun(s);
+//    printf("\n");
+//}
+//int main()
+//{
+//    int  a[3][2] = { 0 }, (*ptr)[2], i, j;
+//    for (i = 0; i < 2; i++)
+//    {
+//        ptr = a + i;
+//        scanf("%d", ptr);
+//    }
+//
+//    for (i = 0; i < 3; i++)
+//    {
+//        for (j = 0; j < 2; j++)
+//            printf("%2d", a[i][j]);
+//        printf("\n");
+//    }
+//}
+//(* (- 16 (* 3 2 2 )) (+ 5 (/ 6 (- 5 3))))
+//(16-(3*2*2))*(5+(6/(5-3))))=(16-12)*(5+(6/2))=4*8=32
