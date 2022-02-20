@@ -1,0 +1,68 @@
+//#include <iostream>
+//using namespace std;
+//int main() {
+//    int x = -1;
+//    //10000000000000000000000000000001 -原码 
+//    //11111111111111111111111111111110 -反码
+//    //11111111111111111111111111111111 -补码
+//    unsigned int y = 2;
+//    //00000000000000000000000000000010
+//    if (x > y) {
+//        cout << "x is greater";
+//    }
+//    else {
+//        cout << "y is greater";
+//    }
+//}
+//#include<iostream>
+//#include<vector>
+//using namespace std;
+//
+//int main(void) {
+//    vector<int>array;
+//    array.push_back(100);
+//    array.push_back(300);
+//    array.push_back(300);
+//    array.push_back(500);
+//    vector<int>::iterator itor;
+//    for (itor = array.begin(); itor != array.end(); itor++) {
+//        if (*itor == 300) {
+//            itor = array.erase(itor);
+//        }
+//    }
+//    for (itor = array.begin(); itor != array.end(); itor++) {
+//        cout << *itor << " ";
+//    }
+//    return 0;
+//}
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int i = 3;
+//	do {
+//		i--;
+//		cout << i << endl;
+//	} while (i != 1);
+//	return 0;
+//}
+#include<iostream>
+using namespace std;
+class ClassA {
+    friend long fun(ClassA a) {
+        if (a.i < 2) return 1;
+        return a.i * fun(ClassA(a.i - 1));
+    }
+public:
+    ClassA(long a) { i = a; }
+private:
+    long i;
+};
+
+int main() {
+    int sum = 0;
+    for (int i = 0; i < 4; i++) {
+        sum += fun(ClassA(i));
+    }
+    cout << sum;
+}
