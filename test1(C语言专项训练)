@@ -754,3 +754,65 @@ int main()
 	printf("%0x %0x %0x",x,y,z);
 	return 0;
 }
+//char st[] = "hello,friend!";
+//
+//void func1(int i);
+//void func2(int i);
+//
+//void func1(int i)
+//{
+//    printf("%c", st[i]);
+//    if (i < 3)
+//    {
+//        i += 2;
+//        func2(i);
+//    }
+//}
+//
+//void func2(int i)
+//{
+//    printf("%c", st[i]);
+//    if (i < 3)
+//    {
+//        i += 2;
+//        func1(i);
+//    }
+//}
+//
+//int main()
+//{
+//    int i = 0;
+//    func1(i);
+//    printf("\n");
+//}
+//int main() {
+//	int a;
+//	a = 125.534;  
+//	printf("%d ",a);//125
+//	a = (int)125.521 % 4;
+//	printf("%d ", a);//1
+//	a = 5 << 2;
+//	//00000101
+//	//00010100
+//	printf("%d\n", a);//20
+//}
+//class Item {
+//private:
+//    char* desc;
+//    int storage;
+//public:
+//    Item() {
+//        desc = new char[51];
+//    }
+//
+//    void setInfo(char* dsrc, int num) {
+//        strcpy(desc, dsrc);
+//        storage = num;
+//    }
+//};
+//
+//int main() {
+//    Item stock;
+//    stock.setInfo("pen", 20);
+//    return 0;
+//}
