@@ -1,3 +1,4 @@
+//以下代码为，在牛客网中做专项练习时遇到的源码
 //#include<stdio.h>
 //int main()
 //{
@@ -816,3 +817,21 @@ int main()
 //    stock.setInfo("pen", 20);
 //    return 0;
 //}
+//int main()
+//{
+//	char dog[] = "wang\0miao";
+//	printf("%d\n",sizeof(dog));//10
+//	printf("%d",strlen(dog));//4
+//	return 0;
+//}
+//int main() {
+//    int m = 0256, n = 256;
+//    
+//    printf("%o %o\n", m, n);//256 400
+//    return 0;
+//}
+void main(void) {
+    int x;
+    x = printf("I See, Sea in C ");
+    printf("x=%d", x);//15
+}
