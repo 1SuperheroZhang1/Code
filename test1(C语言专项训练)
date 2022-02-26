@@ -835,3 +835,25 @@ void main(void) {
     x = printf("I See, Sea in C ");
     printf("x=%d", x);//15
 }
+//#include <stdio.h>
+//main()
+//{
+//	int  x;
+//	for (x = 3; x < 6; x++)
+//		printf((x % 2) ? ("*%d") : ("#%d"), x);
+//	printf("\n");
+//}
+//int main() {
+//    char p1[15] = "abcd", * p2 = "ABCD", str[50] = "xyz";
+//    strcpy(str + 2, strcat(p1 + 2, p2 + 1));
+//    printf("%s", str);
+//}
+int main(void)
+{
+    int i;
+    for (i = 0; i < 2; i++) {
+        fork();
+        printf("-");
+    }
+    return 0;
+}
