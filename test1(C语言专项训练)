@@ -857,3 +857,32 @@ int main(void)
     }
     return 0;
 }
+//int main()
+//{
+//	int a = 7 % 4;
+//	printf("%d",a);//3
+//	return 0;
+//}
+//int main()
+//{
+//	char str[] = "Hello";
+//	printf("%d", sizeof(str));//6
+//	return 0;
+//}
+//int main()
+//{
+//	int a1, a2; 
+//	char c1, c2;
+//	scanf("%d%c%d%c", &a1, &c1, &a2, &c2);
+//	//scanf用于输入整数时，当遇到非数字字符结束，此时非数字字符将存于键盘缓冲区，
+//	//如果接着读入字符，将从键盘缓冲区读取字符。
+//	printf("a1=%d c1=%c a2=%d c2=%c\n",a1,c1,a2,c2);
+//	return 0;
+//}
+//int main()
+//{
+//	printf("%5s", "abcdefg");
+//	//%.5s表示最多输入5个字符，如果不够，左边用空格补齐
+//	//%5s表示最少输入5个字符
+//	return 0;
+//}
