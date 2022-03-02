@@ -139,3 +139,31 @@ class Demo2 {
         }
     }
 }
+//    public static void main(String[] args) {
+//        Integer a = 1;
+//        Integer b = 1;
+//        Integer c = 500;
+//        Integer d = 500;
+//        System.out.print(a == b);//true
+//        System.out.print(c == d);//false --->-128~127
+//    }
+//        public static void main(String[] args)
+//        {
+//            char myChar = 'g';
+//            String myStr = Character.toString(myChar);
+//            System.out.println("String is: "+myStr);//g
+//            myStr = String.valueOf(myChar);
+//            System.out.println("String is: "+myStr);//g
+//        }
+        public static void main(String[] args) {
+            HelloWorld inc = new HelloWorld();
+            int i = 0;
+            inc.fermin(i);
+            i= i ++;
+            System.out.println(i);
+
+        }
+        void fermin(int i){
+            i++;
+        }
+    }
