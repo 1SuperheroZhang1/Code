@@ -167,3 +167,52 @@ class Demo2 {
             i++;
         }
     }
+public static void main(String args[]){
+//        HelloWorld test = new HelloWorld();
+//        test.aMethod();
+//        int j = test.aMethod();
+//        System.out.println(j);
+//    }
+public static Test t1 = new Test();
+//    {
+//        System.out.println("blockA");
+//    }
+//    static
+//    {
+//        System.out.println("blockB");
+//    }
+//    public static void main(String[] args)
+//    {
+//        Test t2 = new Test();
+//    }
+ public static void main(String[] args) {
+//        int result = getValue(2);
+//        System.out.println(result);
+//    }
+//    public static int getValue(int i) {
+//        int result = 0;
+//        switch (i) {
+//            case 1:
+//                result = result + i;
+//            case 2:
+//                result = result + i * 2;
+//            case 3:
+//                result = result + i * 3;
+//        }
+//        return result;
+//    }
+enum AccountType
+{
+    SAVING, FIXED, CURRENT;
+    private AccountType()
+    {
+        System.out.println("It is a account type");
+    }
+}
+class EnumOne
+{
+    public static void main(String[]args)
+    {
+        System.out.println(AccountType.FIXED);
+    }
+}
