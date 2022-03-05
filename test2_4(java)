@@ -328,3 +328,49 @@ class EnumOne
 //
 //    }
 //}
+//public class Test {
+//    public static void main(String[] args) {
+//        TreeSet<Integer> set = new TreeSet<Integer>();
+//        TreeSet<Integer> subSet = new TreeSet<Integer>();
+//        for(int i=606;i<613;i++){
+//            if(i%2==0){
+//                set.add(i);
+//            }
+//        }
+//        subSet = (TreeSet)set.subSet(608,true,611,true);
+//        set.add(609);
+//        System.out.println(set+" "+subSet);
+//    }
+//}
+//
+//public class Test {
+//    public static void main(String args[]) {
+//        int x = -5;
+//        int y = -12;
+//        System.out.println(y % x);
+//    }
+//}
+//public class Test{//1
+//    public static void main(String[] args) {//2
+//        System.out.println("value="+switchit(4));//3
+//    }//4
+//    public static int switchit(int x) {
+//        int j=1;
+//        switch (x) {
+//            case 1:j++;
+//            case 2:j++;
+//            case 3:j++;
+//            case 4:j++;
+//            case 5:j++;
+//            default:j++;
+//        }
+//        return j+x;
+//    }
+//}
+//public class Test {
+//    public static void main(String args[]) {
+//        int i = -5;
+//        i =  ++(i++);//err
+//        System.out.println(i);
+//    }
+//}
