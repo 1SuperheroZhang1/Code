@@ -374,3 +374,74 @@ class EnumOne
 //        System.out.println(i);
 //    }
 //}
+//public class Test{
+//    public static void main(String[] args){
+//        new Test().go();
+//    }
+//    public void go(){
+//        Runnable r=new Runnable(){
+//            public void run(){
+//                System.out.print("foo");
+//            }
+//        };
+//        Thread t=new Thread(r);
+//        t.start();
+//    }
+//}
+//public class Test {
+//    private String name = "abc";
+//    public static void main(String[] args) {
+//        Test test = new Test();
+//        Test testB = new Test();
+//        String result = test.equals(testB) + ",";
+//        result += test.name.equals(testB.name) + ",";
+//        result += test.name == testB.name;
+//        System.out.println(result);
+//    }
+//}
+//public class Test
+//{
+//    public static void main(String[] args) {
+//        Test t=new Test();
+//        t.test();
+//    }
+//    public void add(Byte b)
+//    {
+//        b = b++;
+//    }
+//    public void test()
+//    {
+//        Byte a = 127;
+//        Byte b = 127;
+//        add(++a);
+//        System.out.print(a + " ");
+//        add(b);
+//        System.out.print(b + "");
+//    }
+//}
+//public class Test{
+//    private static int i=1;
+//    public int getNext(){
+//        return i++;
+//    }
+//    public static void main(String [] args){
+//        Test test=new Test();
+//        Test testObject=new Test();
+//        test.getNext();
+//        testObject.getNext();
+//        System.out.println(testObject.getNext());
+//    }
+//}
+
+class Test1 {
+    public static void hello() {
+        System.out.println("hello");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Test1 t=null;
+        t.hello();
+    }
+}
