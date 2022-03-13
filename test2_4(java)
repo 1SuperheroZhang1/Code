@@ -507,19 +507,37 @@ public class Test {
 //    }
 //}
 
-class Test{
-    public static void main(String[] args) {
-        Integer i = 42;
-        Long l = 42l;
-        Double d = 42.0;
-
-//        System.out.println(i == l);
-//        System.out.println(i == d);
-//        System.out.println(l == d);
-        System.out.println(i.equals(d));
-        System.out.println(d.equals(l));
-        System.out.println(i.equals(l));
-        System.out.println(l.equals(42L));
-        
+//class Test{
+//    public static void main(String[] args) {
+//        Integer i = 42;
+//        Long l = 42l;
+//        Double d = 42.0;
+//
+////        System.out.println(i == l);
+////        System.out.println(i == d);
+////        System.out.println(l == d);
+//        System.out.println(i.equals(d));//false
+//        System.out.println(d.equals(l));//false
+//        System.out.println(i.equals(l));//false
+//        System.out.println(l.equals(42L));//true
+//
+//    }
+//}
+class Car extends Vehicle
+{
+    public static void main (String[] args)
+    {
+        new  Car(). run();
+    }
+    private final void run()
+    {
+        System. out. println ("Car");//Car
+    }
+}
+class Vehicle
+{
+    private final void run()
+    {
+        System. out. println("Vehicle");
     }
 }
