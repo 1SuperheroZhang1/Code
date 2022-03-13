@@ -445,3 +445,81 @@ public class Test {
         t.hello();
     }
 }
+//class Test
+//{
+//    private int data;
+//    int result = 0;
+//    public void m()
+//    {
+//        result += 2;
+//        data += 2;
+//        System.out.print(result + "  " + data);
+//    }
+//}
+//class ThreadExample extends Thread
+//{
+//    private Test mv;
+//    public ThreadExample(Test mv)
+//    {
+//        this.mv = mv;
+//    }
+//    public void run()
+//    {
+//        synchronized(mv)
+//        {
+//            mv.m();
+//        }
+//    }
+//}
+//class  ThreadTest
+//{
+//    public static void main(String args[])
+//    {
+//        Test mv = new Test();
+//        Thread t1 = new ThreadExample(mv);
+//        Thread t2 = new ThreadExample(mv);
+//        Thread t3 = new ThreadExample(mv);
+//        t1.start();
+//        t2.start();
+//        t3.start();
+//    }
+//}
+
+//public class HelloSogou{
+//    public static synchronized void main(String[] a){
+//        Thread t=new Thread(){
+//            public void run(){Sogou();}
+//        };
+//        t.run();
+//        System.out.print("Hello");
+//    }
+//    static synchronized void Sogou(){
+//        System.out.print("Sogou");
+//    }
+//}
+
+
+
+//public class Test{
+//    static boolean Paddy;
+//    public static void main(String args[]){
+//        System.out.println(Paddy);
+//    }
+//}
+
+class Test{
+    public static void main(String[] args) {
+        Integer i = 42;
+        Long l = 42l;
+        Double d = 42.0;
+
+//        System.out.println(i == l);
+//        System.out.println(i == d);
+//        System.out.println(l == d);
+        System.out.println(i.equals(d));
+        System.out.println(d.equals(l));
+        System.out.println(i.equals(l));
+        System.out.println(l.equals(42L));
+        
+    }
+}
