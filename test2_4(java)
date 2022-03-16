@@ -651,3 +651,61 @@ public class Test{
         System.out.println(i);
     }
 }
+//public class Test
+//{
+//    public static void main(String args[])
+//    {
+//        int a;
+//        a = 6;
+//        System.out.print(a);//6
+//        System.out.print(a++);//6
+//        System.out.print(a);//7
+//    }
+//}
+//class BaseClass {
+//    public BaseClass() {}
+//
+//    {
+//        System.out.println("I’m BaseClass class");//③
+//    }
+//
+//    static {
+//        System.out.println("static BaseClass");//①
+//    }
+//}
+//
+//public class Test extends BaseClass {
+//    public Test() {}
+//
+//    {
+//        System.out.println("I’m Base class");//④
+//    }
+//
+//    static {
+//        System.out.println("static Base");//②
+//    }
+//
+//    public static void main(String[] args) {
+//        new Test();//①->②->③->④
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        try{//在try块中可以抛出异常
+//            throw new RuntimeException("输入错误");
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
+//    }
+//}
+//}
+public class Test {
+    public static void main(String[] args) {
+        String str = "hello world";
+
+        int strlen=str.length();
+//        str=100;
+//        str+='          a';
+        str=str+100;
+    }
+}
