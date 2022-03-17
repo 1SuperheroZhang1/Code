@@ -709,3 +709,106 @@ public class Test {
         str=str+100;
     }
 }
+//public class Test extends HelloA
+//{
+//    public Test()
+//    {
+//    }
+//    {
+//        System.out.println("I’m B class");
+//    }
+//    static
+//    {
+//        System.out.println("static B");
+//    }
+//    public static void main(String[] args)
+//    {
+//        new Test();
+//    }
+//}
+//class HelloA
+//{
+//    public HelloA()
+//    {
+//    }
+//    {
+//        System.out.println("I’m A class");
+//    }
+//    static
+//    {
+//        System.out.println("static A");
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        double d1=-0.5;
+//        System.out.println("Ceil d1="+Math.ceil(d1));
+//        System.out.println("floor d1="+Math.floor(d1));
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        String a = new String("myString");
+//        String b = "myString";
+//        String c = "my" + "String";
+//        String d = c;
+//        System.out.print(a == b);//false
+//        System.out.print(a == c);//false
+//        System.out.print(b == c);//true
+//        System.out.print(b == d);//true
+//    }
+//}
+//public class Test
+//{
+//    static boolean foo(char c)
+//    {
+//        System.out.print(c);
+//        return true;
+//    }
+//    public static void main( String[] argv )
+//    {
+//        int i = 0;
+//        for ( foo('A'); foo('B') && (i < 2); foo('C'))
+//        {
+//            i++ ;
+//            foo('D');
+//        }
+//    }
+//}
+//public class Test
+//{
+//    public static int x;
+//    public static void main(String []args)
+//    {
+//        System. out. println("Value is " + x);//0
+//    }
+//}
+public class Test
+{
+    public static String output = "";
+    public static void foo(int i)
+    {
+        try
+        {
+            if (i == 1)
+            {
+                throw new Exception();
+            }
+        }
+        catch (Exception e)
+        {
+            output += "2";
+            return ;
+        } finally
+        {
+            output += "3";
+        }
+        output += "4";
+    }
+    public static void main(String[] args)
+    {
+        foo(0);
+        foo(1);
+        System.out.println(output);
+    }
+}
