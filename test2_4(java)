@@ -812,3 +812,63 @@ public class Test
         System.out.println(output);
     }
 }
+//class Chinese{
+//    private static Chinese objref =new Chinese();
+//    private Chinese(){}
+//    public static Chinese getInstance() { return objref; }
+//}
+//
+//public class Test {
+//    public static void main(String [] args) {
+//        Chinese obj1 = Chinese.getInstance();
+//        Chinese obj2 = Chinese.getInstance();
+//        System.out.println(obj1 == obj2);
+//    }
+//}
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        int a[ ][ ] = {{1, 2}, {3, 4}, {5, 6}};
+//
+//        System.out.println(a[1][1]);
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        Runnable runner=new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.print("foo");
+//            }
+//        };
+//        Thread t=new Thread(runner);
+//        t.run();
+//        System.out.print("bar");
+//    }
+//}
+public class Test
+{
+    private String baseName = "base";
+    public Test()
+    {
+        callName();
+    }
+
+    public void callName()
+    {
+        System. out. println(baseName);
+    }
+
+    static class Sub extends Test
+    {
+        private String baseName = "sub";
+        public void callName()
+        {
+            System. out. println (baseName) ;
+        }
+    }
+    public static void main(String[] args)
+    {
+        Test b = new Sub();
+    }
+}
