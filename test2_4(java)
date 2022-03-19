@@ -872,3 +872,62 @@ public class Test
         Test b = new Sub();
     }
 }
+//public class Test
+//{
+//    public static int aMethod(int i)throws Exception
+//    {
+//        try{
+//            return i/10;
+//        }
+//        catch (Exception ex)
+//        {
+//            throw new Exception("exception in a aMethod");
+//        }finally{
+//            System.out.printf("finally");
+//        }
+//    }
+//    public static void main(String[] args){
+//        try
+//        {
+//            aMethod(0);
+//        }
+//        catch (Exception ex)
+//        {
+//            System.out.printf("exception in main");
+//        }
+//        System.out.printf("finished");
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        byte a=3;
+//        byte b=2;
+//        byte c=127;
+//        byte d=126;
+////        b=a+b;
+//        a+=b;
+////        d=c+d;
+//        c+=d;
+//        System.out.println(b);
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        int a='2';
+//        System.out.println(a);//50
+//    }
+//}
+//public class Test {
+//
+//    public static void main(String args[]) {
+//        int x, y;
+//        x = 5 >> 2;
+//        y = x >>> 2;
+//        System.out.println(y);
+//    }
+//}
+public class Test {
+    public static void main(String[] args) {
+        Float a=1.0f;
+    }
+}
