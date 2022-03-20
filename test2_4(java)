@@ -931,3 +931,127 @@ public class Test {
         Float a=1.0f;
     }
 }
+//public class Test {
+//    public static void main(String args[]) {
+//        String x="7";
+//        int y = 2;
+//        int z=2;
+//        System.out.println(x+y+z);//722
+//    }
+//}
+//class Base
+//{
+//    public void methodOne()
+//    {
+//        System.out.print("A");
+//        methodTwo();
+//    }
+//
+//    public void methodTwo()
+//    {
+//        System.out.print("B");
+//    }
+//}
+//
+//class Derived extends Base
+//{
+//    public void methodOne()
+//    {
+//        super.methodOne();
+//        System.out.print("C");
+//    }
+//
+//    public void methodTwo()
+//    {
+//        super.methodTwo();
+//        System.out.print("D");
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        Base b=new Derived();
+//        b.methodOne();//ABDC
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        int num = 2;
+//        switch (num) {
+//            case 1:
+//                ++num;
+//            case 2:
+//                ++num;
+//            case 3:
+//                ++num;
+//            default:
+//                ++num;
+//                break;
+//        }
+//        System.out.println(num);
+//    }
+//}
+//public class Test {
+//    public static void main(String args[]) {
+//        int i = 7;
+//        do {
+//            System.out.println(--i);
+//            --i;
+//        } while (i != 0);
+//        System.out.println(i);
+//    }
+//}
+//public class Test {
+//    public static class A {
+//        private B ref;
+//        public void setB(B b) {
+//            ref = b;
+//        }
+//    }
+//    public static Class B{
+//        private A ref;
+//        public void setA(A a) {
+//            ref = a;
+//        }
+//    }
+//    public static void main(String args[]) {
+//        start();
+//    }
+//    public static void start() { A a = new A();
+//        B b = new B();
+//        a.setB(b);
+//        b = null; //
+//        a = null;
+//    }
+//}
+//class A{}
+//
+//class B extends A{}
+//
+//class C extends A{}
+//
+//class D extends B{}
+//
+//public class Test {
+//    public static void main(String[] args) {
+//        A obj = new D();
+//
+//        System.out.println(obj instanceof B);//true
+//
+//        System.out.println(obj instanceof C);//false
+//
+//        System.out.println(obj instanceof D);//true
+//
+//        System.out.println(obj instanceof A);//true
+//
+//    }
+//}
+public class Test {
+    public static void main(String[] args) {
+//        String str = "";
+//        System.out.print(str.split(",").length);//1
+//        byte a=128;//err
+//        boolean i=null;//err
+        long i=0xfffL;
+        double j=0.9239d;
+    }
+}
