@@ -1055,3 +1055,62 @@ public class Test {
         double j=0.9239d;
     }
 }
+//public class Test {
+//    public static void main(String[] args) {
+//        StringBuffer a = new StringBuffer("A");
+//        StringBuffer b = new StringBuffer("B");
+//        operator(a, b);
+//        System.out.println(a + "," + b);
+//    }
+//    public static void operator(StringBuffer x, StringBuffer y) {
+//        x.append(y);
+//        y = x;
+//    }
+//}
+//class P {
+//    public static int abc = 123;
+//    static{
+//        System.out.println("P is init");
+//    }
+//}
+//class S extends P {
+//    static{
+//        System.out.println("S is init");
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        System.out.println(S.abc);
+//        int a[]={1,2,3,4,5};
+////        int a[]=new int[5]{1,2,3,4,5};//err
+//    }
+//}
+//public class Test{
+//    public static void main(String [] args){
+//        List list=new ArrayList();
+//        list.add("a");
+//        list.add("b");
+//        list.add("a");
+//        Set set=new HashSet();
+//        set.add("a");
+//        set.add("b");
+//        set.add("a");
+//        System.out.println(list.size()+","+set.size());
+//    }
+//}
+public class Test {
+    String str=new String("good");
+    char[] ch={'a','b','c'};
+
+    public static void main(String[] args) {
+        Test t=new Test();
+        t.change(t.str,t.ch);
+        System.out.print(t.str+"and");
+        System.out.print(t.ch);
+    }
+
+    private void change(String str, char[] ch) {
+        str="test ok";
+        ch[0]='g';
+    }
+}
