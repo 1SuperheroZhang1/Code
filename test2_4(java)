@@ -1114,3 +1114,122 @@ public class Test {
         ch[0]='g';
     }
 }
+//public class Test
+//{
+//    public static Test t1 = new Test();
+//    public static Test t2 = new Test();
+//    {
+//        System.out.println("构造块");
+//    }
+//    static
+//    {
+//        System.out.println("静态块");
+//    }
+//    public static void main(String[] args)
+//    {
+//        Test t = new Test();
+//    }
+//}
+//public class Test
+//{
+//    private int a=10;
+//    int b=20;
+//    static int c=1;
+//    public static void main(String arg[])
+//    {
+//        Test t = new Test();
+//        System.out.println(t.a);//10
+////        System.out.println(this.c);//err
+////        System.out.println(Test.b);//err
+//        System.out.println(t.c);//1
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        String s1 = "xiaopeng" ;
+//        String s2 = "xiaopeng" ;
+//        String s3 =new String (s1);
+//
+//        System.out.println(s1 == s2);//true
+//        System.out.println(s1 = s2);//xiaopeng
+//        System.out.println(s2 == s3);//false
+//    }
+//}
+//class A{
+//    public A(String str){
+//
+//    }
+//}
+//public class Test{
+//    public static void main(String[] args) {
+//        A classa=new A("he");
+//        A classb=new A("he");
+//        System.out.println(classa==classb);//false
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+////       String c;
+////        System.out.println(c);
+//        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+//
+//    }
+//}
+//public class Test {
+//    public static void main(String sgf[]) {
+//
+//        StringBuffer a=new StringBuffer("A");
+//
+//        StringBuffer b=new StringBuffer("B");
+//
+//        operate(a,b);
+//
+//        System.out.println(a+"."+b);
+//    }
+//    static void operate(StringBuffer x,StringBuffer y) {
+//        x.append(y);
+//        y=x;
+//    }
+//}
+//point X
+//public class Test {
+//    public static void main(String[] args) throws Exception {
+//
+//        PrintWriter out = new PrintWriter(
+//                new java.io.OutputStreamWriter(System.out), true);
+//        out.println("Hello");
+//    }
+//
+//}
+//public class Test {
+//    public static int a = 1;
+//    public static void main(String[] args) {
+//        int a = 10;
+//        a++; Test.a++;
+//        Test t=new Test();
+//        System.out.println("a=" + a + " t.a=" + t.a);
+//    }
+//}
+//public class Test{
+//    static{
+//        int x=5;
+//    }
+//    static int x,y;
+//    public static void main(String args[]){
+//        x--;
+//        myMethod( );
+//        System.out.println(x+y+ ++x);//3
+//    }
+//    public static void myMethod( ){
+//        y=x++ + ++x;
+//    }
+//}
+public class Test {
+    //静态初始化块的标准写法：没有修饰符，没有参数
+    static {
+        //初始化内容
+    }
+    public static void main(String[] args) {
+
+    }
+}
