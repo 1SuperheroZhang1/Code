@@ -1233,3 +1233,47 @@ public class Test {
 
     }
 }
+//public class Test {
+//    public static void main(String[] args) {
+//        String str1="hello";
+//
+//        String str2="he"+ new String("llo");
+//
+//        System.out.println(str1==str2);//false
+//    }
+//}
+//public class Test implements B{
+//    public static void main(String args[]){
+//        int i;
+//        Test a1=new  Test();
+//        i =a1.k;
+//        System.out.println("i="+i);//10
+//    }
+//}
+//interface B{
+//    int k=10;
+//}
+//public class Test {
+//    static int x=10;
+//    static {
+//        x+=5;
+//    }
+//    public static void main(String[] args)
+//    {
+//        System.out.println("x="+x);//5
+//    }
+//    static{x/=3;};
+//}
+//class Base{
+//    public Base(String s){
+//        System.out.print("B");
+//    }
+//}
+//public class Test extends Base{
+//    public Test (String s) {//err - There is no default constructor available in 'Base'
+//        System.out.print("D");
+//    }
+//    public static void main(String[] args){
+//        new Test("C");
+//    }
+//}
