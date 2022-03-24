@@ -1277,3 +1277,54 @@ public class Test {
 //        new Test("C");
 //    }
 //}
+package NowCoder_Code;
+
+/**
+ * @author superherozhang
+ * @create 2022-03-24 17:36
+ */
+//public class Test {
+//    public static void main(String[] args) {
+//        Thread t = new Thread() {
+//
+//            public void run() {
+//                my360DW();
+//            }
+//        };
+//
+//        t.run();
+//        System.out.print("DW");
+//
+//    }
+//
+//    static void my360DW() {
+//
+//        System.out.print("360");
+//
+//    }
+//}
+//public class Test{
+//    public static void main(String[] args){
+//        Object o=new Object(){
+//            public boolean equals(Object obj){
+//                return true;
+//            }
+//        };
+//        System.out.println(o.equals("Fred"));
+//    }
+//}
+//public class Test {
+//    static String x="1";
+//    static int y=1;
+//    public static void main(String args[]) {
+////        static int z=2;//err - static不能修饰局部变量
+//        System.out.println(x+y+z);
+//    }
+//}
+public class Test {
+    public static void main(String args[]) {
+        int i = 0;
+        i = i++ + i;
+        System.out.println("I =" +i);
+    }
+}
