@@ -1328,3 +1328,98 @@ public class Test {
         System.out.println("I =" +i);
     }
 }
+//public class Test{
+//    public static void main(String[] args){
+//        System.out.print(getNumber(0));
+//        System.out.print(getNumber(1));
+//        System.out.print(getNumber(2));
+//        System.out.print(getNumber(4));
+//    }
+//
+//    public static int getNumber(int num){
+//        try{
+//            int result = 2 / num;
+//            return result;
+//        }catch (Exception exception){
+//            return 0;
+//        }finally{
+//            if(num == 0){
+//                return -1;
+//            }
+//            if(num == 1){
+//                return 1;
+//            }
+//        }
+//    }
+//}
+
+//public class Test{
+//    public static void main(String[] args) {
+//        int a = 10;
+//        System.out.println(a++ + a--);//21
+//    }
+//}
+
+//public class Test {
+//    public static void main(String args[]) {
+//        String s = "祝你考出好成绩！";
+//        System.out.println(s.length());//8
+//    }
+//}
+//public class Test{
+//    public static void main(String args[])throws InterruptedException{
+//        Thread t=new Thread(new Runnable() {
+//            public void run() {
+//                try {
+//                    Thread.sleep(2000);
+//                } catch (InterruptedException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                System.out.print("2");
+//            }
+//        });
+//        t.start();
+//
+//        t.join();
+//        System.out.print("1");
+//    }
+//}
+//public class Test
+//{
+//    public static void main(String[] args)
+//    {
+//        Integer n1 = new Integer(47);
+//        Integer n2 = new Integer(47);
+//        System.out.print(n1 == n2);//false
+//        System.out.print(",");
+//        System.out.println(n1 != n2);//true
+//    }
+//}
+class Base
+{
+    public void method()
+    {
+        System.out.println("Base");
+    }
+}
+class Son extends Base
+{
+    public void method()
+    {
+        System.out.println("Son");
+    }
+
+    public void methodB()
+    {
+        System.out.println("SonB");
+    }
+}
+public class Test
+{
+    public static void main(String[] args)
+    {
+        Base base = new Son();
+        base.method();
+//        base.methodB();//err - Base类中没有methodB方法，编译不通过。
+    }
+}
