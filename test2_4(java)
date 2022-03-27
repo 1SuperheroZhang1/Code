@@ -1526,3 +1526,66 @@ public class Child extends Test{
         System.out.println(p.name);//err  java: 类Child是公共的, 应在名为 Child.java 的文件中声明
     }
 }
+//public class Test{
+//    public static void main(String[] args) {
+//        Integer i1=128;
+//        Integer i2=128;
+//        System.out.println((i1 == i2)+",");//false
+//
+//        String i3="100";
+//        String i4="1"+new String("00");
+//        System.out.println((i3 == i4)+",");//false
+//
+//        Integer i5=100;
+//        Integer i6=100;
+//        System.out.println((i5 == i6));//true
+//    }
+//}
+//class Person {
+//    String name = "No name";
+//    public Person(){
+//
+//    }
+//    public Person(String nm) {
+//        name = nm;
+//    }
+//}
+//class Employee extends Person {
+//    String empID = "0000";
+//
+//    public Employee() {
+//
+//    }
+//    public Employee(String id) {
+//        empID = id;
+//    }
+//}
+//public class Test {
+//    public static void main(String args[]) {
+//        Employee e = new Employee("123");
+//        System.out.println(e.empID);
+//        char foo='中';
+//    }
+//}
+class Animal{
+    public void move(){
+        System.out.println("动物可以移动");
+    }
+}
+class Dog extends Animal{
+    public void move(){
+        System.out.println("狗可以跑和走");
+    }
+    public void bark(){
+        System.out.println("狗可以吠叫");
+    }
+}
+public class Test{
+    public static void main(String args[]){
+        Animal a = new Animal();
+        Animal b = new Dog();
+        a.move();
+        b.move();
+//        b.bark();//err - 编译看左边，运行看右边
+    }
+}
