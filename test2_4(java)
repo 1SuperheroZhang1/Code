@@ -1589,3 +1589,62 @@ public class Test{
 //        b.bark();//err - 编译看左边，运行看右边
     }
 }
+//class DataObject implements Serializable {
+//    private static int i=0;
+//    private String word=" ";
+//    public void setWord(String word){
+//        this.word=word;
+//    }
+//    public void setI(int i){
+//        Data0bject.i=i;
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        DataObject object=new Data0bject();
+//        object.setWord("123");
+//        object.setI(2);
+//    }
+//    }
+//public class Test{
+//    public static void main(String[] args) {
+//        System.out.println(val());
+//    }
+//
+//    public static int val() {
+//        int num = 5;
+//        try {
+//            num = num / 0;
+//        } catch (Exception e) {
+//            num = 10;
+//        } finally {
+//            num = 15;
+//        }
+//        return num;
+//    }
+//}
+//public class Test{
+//    public static void main(String[] args) {
+//        Object o1 = true ? new Integer(1) : new Double(2.0);
+//        Object o2;
+//        if (true) {
+//            o2 = new Integer(1);
+//        } else {
+//            o2 = new Double(2.0);
+//        }
+//        System.out.print(o1);//1.0
+//        System.out.print(" ");
+//        System.out.print(o2);//2
+//    }
+//}
+import java.util.Date;
+public class Test extends Date{
+    private static final long serialVersionUID = 1L;
+    private void test(){
+        System.out.println(super.getClass().getName());
+    }
+
+    public static void main(String[]args){
+        new Test().test();
+    }
+}
