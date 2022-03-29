@@ -1648,3 +1648,32 @@ public class Test extends Date{
         new Test().test();
     }
 }
+//class Supper{
+//    public int get()
+//    {
+//        System.out.println("Supper");
+//        return 5;
+//    }
+//}
+//public class Test{
+//    public int get()
+//    {
+//        System.out.println("Sub");
+//        return new Integer("5");          }
+//    public static void main(String args[]) {
+//        new Supper().get();
+//        new Test().get();          }
+//}
+public class Test{
+    public static void main(String[] args) {
+        byte a1 = 2, a2 = 4, a3;
+        short s = 16;
+//        a2 = s;//err
+//        a3 = a1 * a2;//err
+
+        int i=0;
+        Integer j = new Integer(0);
+        System.out.println(i==j);
+        System.out.println(j.equals(i));
+    }
+}
