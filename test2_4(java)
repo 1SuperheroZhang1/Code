@@ -1677,3 +1677,59 @@ public class Test{
         System.out.println(j.equals(i));
     }
 }
+//class Foo {
+////    final int i;//Variable 'i' might not have been initialized
+//    int j;
+//    public void doSomething() {
+//        System.out.println(++j + i);
+//    }
+//}
+//
+//public class Test{
+//    public static void main(String[] args) {
+//        Foo f=new Foo();
+//        f.doSomething();
+//    }
+//}
+//interface Com{
+//    int M=200;
+//    int f();
+//}
+//class ImpCom implements Com{
+//     public int f(){
+//         return 100+M;
+//     }
+////     int f()
+////     {
+////         return 100;
+////     }
+//}
+//public class Test {
+//    public static void main(String args[]) {
+//        String s = "祝你考出好成绩！";
+//        System.out.println(s.length());//8
+//    }
+//}
+//public class Test{
+//    public static void main(String args[]) {
+//        //14 - 1110
+//        //3  - 0011
+//     // 14^3 - 1101
+//        System.out.println(14^3);//13
+//    }
+//}
+public class Test{
+    String str=new String("tarena");
+    char[]ch={'a','b','c'};
+    public static void main(String args[]){
+        Test ex=new Test();
+        ex.change(ex.str,ex.ch);
+        System.out.print(ex.str+" and ");
+        System.out.print(ex.ch);
+    }
+    public void change(String str,char ch[]){
+        //引用类型变量，传递的是地址，属于引用传递。
+        str="test ok";
+        ch[0]='g';
+    }
+}
