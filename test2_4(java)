@@ -33,6 +33,39 @@ import java.util.*;
 //        public void setValue(int value) {
 //            this.value= value;
 //        }
+//public class Test{
+//    public static void main(String[] args){
+//        Double x=1.2;
+//        long l = 1.2;//err
+//        float f =  x/l;//err
+//        System.out.println(f);
+//    }
+//}
+//public class Test{
+//    public static boolean isAdmin(String userId){
+//        return userId.toLowerCase()=="admin";
+//    }
+//    public static void main(String[] args){
+//        System.out.println(isAdmin("Admin"));//false
+//    }
+//}
+//public class Test{
+//    public static void main(String[] args) {
+//        int Arry_a[] = new int[10];
+//        System.out.println(Arry_a[10]);//ArrayIndexOutOfBoundsException
+//    }
+//}
+public class Test{
+    public static void main(String[] args) {
+        Boolean flag = false;
+        if(flag = true){//"="为赋值运算符
+            System.out.println("true");//true
+        }else{
+
+            System.out.println("false");
+        }
+    }
+}
 //        public int getValue() {
 //            try {
 //                value ++;
