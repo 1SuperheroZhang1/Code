@@ -1839,3 +1839,38 @@ public class Test {
         System.out.println(x / y);
     }
 }
+//public class Test{
+//        public static void main(String [] args){
+//            float f=42.0f;
+//            float f1[]=new float[2];
+//            float f2[]=new float[2];
+//            float[] f3=f1;
+//            long x=42;
+//            f1[0]=42.0f;
+//
+//            System.out.println(f1 == f2);//false
+//            System.out.println(x == f1[0]);//true
+//            System.out.println(f1 == f3);//true
+////            System.out.println(f2 == f1[1]);//err
+//        }
+//}
+//public class Test{
+//    public static void main(String args[]){
+//        System.out.println(100%3);//1
+//        System.out.println(100%3.0);//1.0
+//    }
+//}
+public class Test{
+    String str = new String("hello");
+    char[] ch = {'a','b','c'};
+    public void fun(String str, char ch[]){
+        str="world";
+        ch[0]='d';
+    }
+    public static void main(String[] args) {
+        Test test1 = new Test();
+        test1.fun(test1.str,test1.ch);
+        System.out.print(test1.str + " and ");//hello+and
+        System.out.print(test1.ch);//dbc
+    }
+}
