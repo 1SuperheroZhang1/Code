@@ -1874,3 +1874,38 @@ public class Test{
         System.out.print(test1.ch);//dbc
     }
 }
+//public class Test{
+//    public static void main(String[] args) {
+//        byte b = (byte)129;
+//        System.out.println(b);//-127
+//        long test=012;
+//        float f=-412;
+////        int other=(int)false;//err
+//        double d=0x12345678;
+////        byte b1=128;//err
+//    }
+//}
+//public class Test
+//{
+//    public int i;
+//    static String s;
+//    void method1(){}
+//    static void method2(){}
+//
+//    public static void main(String[] args) {
+//        Test t=new Test();
+//        System.out.println(t.i);
+//        t.method1();
+//        Test.method2();
+//    }
+//}
+//}
+public class Test{
+        public static void main ( String arg[] ) {
+            String x="fmn";
+            x.toUpperCase();
+            String y=x.replace('f','F');
+            y=y+"wxy";
+            System.out.println(y);//Fmnwxy
+        }
+}
