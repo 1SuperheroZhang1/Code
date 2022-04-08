@@ -1964,3 +1964,43 @@ public class Test
         }
     }
 }
+//public class Test{
+//    private static final String MESSAGE="taobao";
+//    public static void main(String [] args) {
+//        String a ="tao"+"bao";
+//        String b="tao";
+//        String c="bao";
+//        System.out.println(a==MESSAGE);//true
+//        System.out.println((b+c)==MESSAGE);//false
+//    }
+//}
+//class A{
+//    public final int a(){
+//        return 1;
+//    }
+//    public final int a(int a){//final修饰的方法可以重载，不能被重写
+//        return 0;
+//    }
+//}
+//class Base {
+//    Base() {
+//        System.out.print("Base");
+//    }
+//}
+//public class Test extends Base {
+//    public static void main( String[] args ) {
+//        new Test();
+//        //调用父类无参的构造方法
+//        new Base();
+//    }
+//}
+
+public class Test{
+    public static void main(String[] args) {
+        String s1=new String("xyz");
+        String s2=new String("xyz");
+        Boolean b1=s1.equals(s2);//true
+        Boolean b2=(s1==s2);//false
+        System .out.print(b1+ "" +b2);//true false
+    }
+}
