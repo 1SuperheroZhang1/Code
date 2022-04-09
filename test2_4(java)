@@ -2004,3 +2004,96 @@ public class Test{
         System .out.print(b1+ "" +b2);//true false
     }
 }
+//public class Test
+//{
+//    public void method()
+//    {
+//        try
+//        {
+//            System.out.println("进入到try块");
+//        }
+//        catch (Exception e)
+//        {
+//            System.out.println("异常发生了！");
+//        }
+//        finally
+//        {
+//            System.out.println("进入到finally块");
+//        }
+//        System.out.println("后续代码");
+//    }
+//    public static void main(String[] args)
+//    {
+//        Test test = new Test();
+//        test.method();//进入到try块->进入到finally块->后续代码
+//    }
+//}
+
+//public class Test{
+//    public static void main(String[] args) {
+////        int t1 = 2, t2 = 3, t3;
+////        t3 = t1 < t2 ? t1 : (t2 + t1);
+////        System.out.println(t3);//2
+//
+////        int b[][]={{1}, {2, 2}, {2, 2, 2}};
+////        int sum = 0;
+////
+////        for(int i = 0; i < b.length; i++) {
+////            for(int j = 0; j < b[i].length; j++) {
+////                sum += b[i][j];
+////            }
+////        }
+////        System.out.println(sum);//11
+//
+////        int x = 1 , y = 2 , z = 3;
+////        y += z-- / ++x;
+////        System.out.println(y);//3
+//
+//        double d=-5 + 1/4 + 2*-3 + 5.0;
+//        System.out.println(d);//-6.0
+//    }
+//}
+
+//public class Test {
+//    public static void main(String[] args) {
+//        System.out.println("return value of getValue(): " + getValue());//return value of getValue(): 5
+//    }
+//    public static int getValue() {
+//        int i = 1;
+//        try {
+//            i = 4;
+//        } finally{
+//            i++;
+//            return i;//5
+//        }
+//    }
+//}
+
+//class Test{
+//    private static int x = 100;
+//    public static void main(String args[ ]){
+//        Test hs1 = new Test();
+//        hs1.x++;
+//        Test hs2 = new Test();
+//        hs2.x++;
+//        hs1=new Test();
+//        hs1.x++;
+//        Test.x--;
+//        System.out.println( "x=" +x);//102
+//    }
+//}
+
+public class Test{
+    public static void main(String[] args) {
+        String a="My field1";
+        String b="My field1";
+        String c=new String("My field1");
+        String d=new String("My field1");
+
+        System.out.println(a == b);//true
+        System.out.println(a == c);//false
+        System.out.println(c = d);//My field1
+        System.out.println(a.equals(b));//true
+        System.out.println(a.equals(c));//true
+    }
+}
