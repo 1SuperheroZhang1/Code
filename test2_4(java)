@@ -2097,3 +2097,123 @@ public class Test{
         System.out.println(a.equals(c));//true
     }
 }
+//public class Test{
+//    public static void main(String args[]) {
+//        Thread t = new Thread() {
+//            public void run() {
+//                pong();
+//            }
+//        };
+//        t.run();
+//        System.out.print("ping");
+//    }
+//    static void pong() {
+//        System.out.print("pong");
+//    }
+//
+//}
+
+
+//public class Test {
+//    public static void main(String[] args) {
+//        Father a = new Father();
+//        Father b = new Child();
+//    }
+//}
+//class Father {
+//    public Father() {
+//        System.out.println("我是父类");
+//    }
+//}
+//class Child extends Father {
+//    public Child() {
+//        System.out.println("我是子类");
+//    }
+//}
+
+//public class Test{
+//    public static void main(String[] args) {
+//        int value;
+//        value=2;
+//        System.out.println(value);//2
+//        System.out.println(value++);//2
+//        System.out.println(value);//3
+//    }
+//}
+
+//public class Test{
+//    public static void main(String[] args) {
+//        Thread[] ths=new Thread[3];
+//        for (int i = 0; i < 3; i++) {
+//            ths[i]=new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    for (int j = 0; j < 5; j++) {
+//                        System.out.print(j);
+//                    }
+//                    System.out.println();
+//                }
+//            });
+//        }
+//        for(Thread th:ths){
+//            th.start();
+//        }
+//    }
+//}
+
+//class A {
+//    public int func1(int a, int b) {
+//        return a - b;
+//    }
+//}
+//class B extends A {
+//    public int func1(int a, int b) {
+//        return a + b;
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) {
+//        A a = new B();
+//        B b = new B();//编译看左边，运行看右边
+//        System.out.println("Result=" + a.func1(100, 50));//150
+//        System.out.println("Result=" + b.func1(100, 50));//150
+//    }
+//}
+
+class B extends Object
+{
+    static
+    {
+        System.out.println("Load B");
+    }
+    public B()
+    {
+        System.out.println("Create B");
+    }
+}
+class A extends B
+{
+    static
+    {
+        System.out.println("Load A");
+    }
+    public A()
+    {
+        System.out.println("Create A");
+    }
+}
+
+public class Test
+{
+    public static void main(String[] args)
+    {
+        new A();
+        /*
+                代码执行顺序：父类静态代码块>子类静态代码块>父类构造方法>子类构造方法
+        *   Load B
+            Load A
+            Create B
+            Create A
+        * */
+    }
+}
