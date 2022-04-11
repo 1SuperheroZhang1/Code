@@ -2217,3 +2217,22 @@ public class Test
         * */
     }
 }
+//class Test{
+//    static int x=10;
+//    static {
+//        x+=5;
+//    }
+//    public static void main(String args[ ]){
+//        System.out.println("x="+x);//5
+//    }
+//    static { x/=3;}
+//}
+
+public class Test{
+    public static void main(String[] args) {
+        int x=20, y=30;
+        boolean b;
+        b = x > 50 && y > 60 || x > 50 && y < -60 || x < -50 && y > 60 || x < -50 && y < -60;
+        System.out.println(b);//false
+    }
+}
